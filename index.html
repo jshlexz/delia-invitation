@@ -1,1208 +1,1018 @@
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Delia's Beach Party</title>
-
-    <meta
-        name="description"
-        content="Delia's Beach Party - Maria Delia Bedu"
-    >
-
-    <!-- GOOGLE FONT -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- CSS -->
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
-</head>
-
-
-<body>
-
-
-    <!-- ==================================================
-         OPENING
-    =================================================== -->
-
-    <section
-        id="openingScreen"
-        class="opening-screen"
-    >
-
-        <div class="opening-decoration flower-one">
-            ✿
-        </div>
-
-        <div class="opening-decoration flower-two">
-            ❀
-        </div>
-
-        <div class="opening-decoration flower-three">
-            ❀
-        </div>
-
-        <div class="opening-decoration flower-four">
-            ✿
-        </div>
-
-
-        <div class="opening-content">
-
-
-            <p class="opening-small">
-                A SPECIAL CELEBRATION
-            </p>
-
-
-            <div class="cover-frame">
-
-                <div class="cover-photo">
-
-                    <img
-                        src="assets/sampul%20delia.jpg"
-                        alt="Maria Delia Bedu"
-                    >
-
-                </div>
-
-            </div>
-
-
-            <p class="opening-invite">
-                YOU ARE INVITED TO
-            </p>
-
-
-            <h1 class="opening-title">
-
-                Delia's
-                <span>Beach Party</span>
-
-            </h1>
-
-
-            <!-- SALIB BESAR -->
-
-            <div class="big-cross">
-
-                <div class="cross-shape">
-
-                    <span class="cross-vertical"></span>
-
-                    <span class="cross-horizontal"></span>
-
-                </div>
-
-
-                <div class="cross-flowers">
-                    ✿ ❀ ✿
-                </div>
-
-            </div>
-
-
-            <button
-                id="openInvitation"
-                class="open-button"
-                type="button"
-            >
-
-                OPEN INVITATION
-
-                <span>
-                    ↓
-                </span>
-
-            </button>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ==================================================
-         MUSIC
-    =================================================== -->
-
-    <audio
-        id="backgroundMusic"
-        loop
-        preload="auto"
-    >
-
-        <source
-            src="assets/lagu-delia.mp3"
-            type="audio/mpeg"
-        >
-
-    </audio>
-
-
-    <button
-        id="musicButton"
-        class="music-button"
-        type="button"
-        aria-label="Putar atau hentikan musik"
-    >
-
-        <span id="musicIcon">
-            ♫
-        </span>
-
-    </button>
-
-
-
-    <!-- ==================================================
-         MAIN INVITATION
-    =================================================== -->
-
-    <main
-        id="invitation"
-        class="hidden"
-    >
-
-
-        <!-- ==================================================
-             WELCOME
-        =================================================== -->
-
-        <section class="section hero-section reveal">
-
-
-            <div class="corner-flower corner-left">
-                ❀
-            </div>
-
-            <div class="corner-flower corner-right">
-                ✿
-            </div>
-
-
-            <p class="eyebrow">
-                WELCOME TO
-            </p>
-
-
-            <h2 class="section-title">
-
-                Delia's
-                <span>Beach Party</span>
-
-            </h2>
-
-
-            <div class="floral-divider">
-
-                <span></span>
-
-                ✿
-
-                <span></span>
-
-            </div>
-
-
-            <div class="intro-text">
-
-                <p>
-
-                    Dengan penuh sukacita dan ucapan syukur kepada Tuhan,
-                    kami mengundang Bapak/Ibu, Saudara/i, serta sahabat
-                    sekalian untuk hadir dan merayakan hari istimewa
-                    bersama Maria Delia Bedu.
-
-                </p>
-
-
-                <p>
-
-                    Mari menikmati kebersamaan, sukacita, permainan,
-                    makanan, serta suasana pantai dalam sebuah momen
-                    yang sederhana namun penuh kenangan.
-
-                </p>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ==================================================
-             VERSE
-        =================================================== -->
-
-        <section class="section verse-section reveal">
-
-
-            <div class="verse-card">
-
-
-                <div class="verse-decoration">
-                    ✿
-                </div>
-
-
-                <p class="verse-label">
-                    FIRMAN TUHAN
-                </p>
-
-
-                <blockquote>
-
-                    “Aku telah datang ke dalam dunia sebagai terang,
-                    supaya setiap orang yang percaya kepada-Ku,
-                    jangan tinggal di dalam kegelapan.”
-
-                </blockquote>
-
-
-                <p class="verse-reference">
-                    YOHANES 12:46
-                </p>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ==================================================
-             ABOUT DELIA
-        =================================================== -->
-
-        <section class="section about-section reveal">
-
-
-            <p class="eyebrow">
-                A LITTLE ABOUT HER
-            </p>
-
-
-            <h2 class="section-title">
-
-                Maria Delia
-                <span>Bedu</span>
-
-            </h2>
-
-
-            <div class="portrait-frame">
-
-                <img
-                    src="assets/delia-01.jpg"
-                    alt="Maria Delia Bedu"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-            <div class="about-text">
-
-                <p>
-
-                    Maria Delia Bedu adalah putri pertama dari
-
-                    <strong>
-                        Daniel Alfonsius Indra Bedu
-                    </strong>
-
-                    dan
-
-                    <strong>
-                        Linda Purnama Tjondro.
-                    </strong>
-
-                </p>
-
-
-                <p>
-
-                    Hari istimewa ini menjadi kesempatan untuk
-                    bersyukur atas kehidupan, pertumbuhan,
-                    kasih Tuhan, serta setiap perjalanan yang
-                    telah Tuhan izinkan.
-
-                </p>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ==================================================
-             GALLERY
-        =================================================== -->
-
-        <section class="section gallery-section">
-
-
-            <div class="reveal">
-
-                <p class="eyebrow">
-                    BEAUTIFUL MEMORIES
-                </p>
-
-
-                <h2 class="section-title">
-
-                    Delia's
-                    <span>Memories</span>
-
-                </h2>
-
-
-                <p class="gallery-intro">
-
-                    Beberapa potret kecil dari perjalanan
-                    dan kenangan Maria Delia Bedu.
-
-                </p>
-
-            </div>
-
-
-            <div class="gallery">
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        01
-                    </div>
-
-                    <img
-                        src="assets/delia-02.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        02
-                    </div>
-
-                    <img
-                        src="assets/delia-03.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        03
-                    </div>
-
-                    <img
-                        src="assets/delia-04.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        04
-                    </div>
-
-                    <img
-                        src="assets/delia-05.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        05
-                    </div>
-
-                    <img
-                        src="assets/delia-06.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        06
-                    </div>
-
-                    <img
-                        src="assets/delia-07.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        07
-                    </div>
-
-                    <img
-                        src="assets/delia-08.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        08
-                    </div>
-
-                    <img
-                        src="assets/delia-09.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        09
-                    </div>
-
-                    <img
-                        src="assets/delia-10.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ==================================================
-             COUNTDOWN
-        =================================================== -->
-
-        <section class="section countdown-section reveal">
-
-
-            <div class="countdown-decoration">
-                ✿
-            </div>
-
-
-            <p class="eyebrow">
-                COUNTING THE DAYS
-            </p>
-
-
-            <h2 class="section-title">
-
-                See You
-                <span>Soon</span>
-
-            </h2>
-
-
-            <div class="countdown">
-
-
-                <div class="count-box">
-
-                    <span id="days">
-                        00
-                    </span>
-
-                    <small>
-                        Days
-                    </small>
-
-                </div>
-
-
-                <div class="count-box">
-
-                    <span id="hours">
-                        00
-                    </span>
-
-                    <small>
-                        Hours
-                    </small>
-
-                </div>
-
-
-                <div class="count-box">
-
-                    <span id="minutes">
-                        00
-                    </span>
-
-                    <small>
-                        Minutes
-                    </small>
-
-                </div>
-
-
-                <div class="count-box">
-
-                    <span id="seconds">
-                        00
-                    </span>
-
-                    <small>
-                        Seconds
-                    </small>
-
-                </div>
-
-
-            </div>
-
-
-            <!-- TANGGAL & WAKTU HANYA DI SINI -->
-
-            <p class="countdown-date">
-
-                SABTU, 26 SEPTEMBER 2026
-
-                <br>
-
-                10.00 WITA – SELESAI
-
-            </p>
-
-
-        </section>
-
-
-
-        <!-- ==================================================
-             EVENT / LOCATION
-        =================================================== -->
-
-        <section class="section details-section reveal">
-
-
-            <p class="eyebrow">
-                SAVE THE DATE
-            </p>
-
-
-            <h2 class="section-title">
-
-                Join Our
-                <span>Celebration</span>
-
-            </h2>
-
-
-            <div class="detail-list">
-
-
-                <!-- LOKASI SAJA -->
-
-                <div class="detail-card">
-
-
-                    <div class="detail-icon">
-                        ⌖
-                    </div>
-
-
-                    <div>
-
-                        <small>
-                            LOKASI
-                        </small>
-
-
-                        <h3>
-                            Aimere, Ngada
-                        </h3>
-
-
-                        <p>
-
-                            5R9H+ Unnamed Road,
-                            Aimere, Kec. Aimere,
-                            Kabupaten Ngada,
-                            Nusa Tenggara Timur
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-            <a
-                href="https://maps.app.goo.gl/mZ2usXbHC9AjVkhy7"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="maps-button"
-            >
-
-                BUKA LOKASI DI GOOGLE MAPS
-
-                <span>
-                    →
-                </span>
-
-            </a>
-
-
-        </section>
-
-
-
-        <!-- ==================================================
-             GAMES & NOTES
-        =================================================== -->
-
-        <section class="section fun-section reveal">
-
-
-            <div class="fun-card">
-
-
-                <div class="fun-flower">
-                    ✿
-                </div>
-
-
-                <p class="eyebrow">
-                    LET'S HAVE FUN
-                </p>
-
-
-                <h2 class="section-title">
-
-                    Games &
-                    <span>Activities</span>
-
-                </h2>
-
-
-                <p class="fun-intro">
-
-                    Selain menikmati kebersamaan, akan ada
-                    berbagai permainan dan kegiatan seru yang
-                    dapat dinikmati bersama keluarga dan sahabat.
-
-                </p>
-
-
-
-                <!-- NOTE PAKAIAN -->
-
-                <div class="note-card">
-
-
-                    <div class="note-icon">
-                        01
-                    </div>
-
-
-                    <div>
-
-                        <h3>
-                            Dress Code
-                        </h3>
-
-
-                        <p>
-
-                            Untuk suasana yang lebih nyaman dan
-                            serasi, Bapak/Ibu, Saudara/i, serta
-                            sahabat sekalian dipersilakan untuk
-                            mengenakan pakaian yang sederhana
-                            dan nyaman.
-
-                            <br><br>
-
-                            Jika memungkinkan, kami juga
-                            mengimbau untuk mengenakan
-                            pakaian berwarna putih.
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- NOTE MAKANAN -->
-
-                <div class="note-card">
-
-
-                    <div class="note-icon">
-                        02
-                    </div>
-
-
-                    <div>
-
-                        <h3>
-                            Makanan
-                        </h3>
-
-
-                        <p>
-
-                            Sebagian hidangan telah kami
-                            persiapkan untuk dinikmati bersama.
-
-                            <br><br>
-
-                            Untuk hidangan lainnya, Bapak/Ibu,
-                            Saudara/i, serta sahabat sekalian
-                            dapat memilih sesuai selera.
-                            Hidangan tersebut nantinya akan
-                            kami siapkan dan masak sesuai
-                            pilihan.
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- NOTE BAJU GANTI -->
-
-                <div class="note-card">
-
-
-                    <div class="note-icon">
-                        03
-                    </div>
-
-
-                    <div>
-
-                        <h3>
-                            Pakaian Ganti
-                        </h3>
-
-
-                        <p>
-
-                            Karena akan ada berbagai permainan
-                            dan aktivitas bersama, mohon
-                            membawa pakaian ganti, baik untuk
-                            anak-anak maupun orang tua.
-
-                            <br><br>
-
-                            Hal ini untuk menjaga kenyamanan
-                            setelah mengikuti kegiatan.
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ==================================================
-             RSVP
-        =================================================== -->
-
-        <section class="section rsvp-section reveal">
-
-
-            <p class="eyebrow">
-                KONFIRMASI KEHADIRAN
-            </p>
-
-
-            <h2 class="section-title">
-
-                Will You
-                <span>Join Us?</span>
-
-            </h2>
-
-
-            <p class="rsvp-text">
-
-                Mohon konfirmasi kehadiran Bapak/Ibu,
-                Saudara/i, serta sahabat sekalian.
-                Kami sangat menantikan kebersamaan
-                kita di hari istimewa ini.
-
-            </p>
-
-
-            <form
-                id="rsvpForm"
-                class="rsvp-form"
-            >
-
-
-                <!-- NAMA -->
-
-                <div class="form-group">
-
-                    <label for="guestName">
-                        NAMA
-                    </label>
-
-
-                    <input
-                        type="text"
-                        id="guestName"
-                        placeholder="Masukkan nama Anda"
-                        required
-                    >
-
-                </div>
-
-
-
-                <!-- KEHADIRAN -->
-
-                <div class="form-group">
-
-                    <label>
-                        KONFIRMASI KEHADIRAN
-                    </label>
-
-
-                    <div class="attendance-options">
-
-
-                        <label class="attendance-option">
-
-                            <input
-                                type="radio"
-                                name="attendance"
-                                value="Hadir"
-                                required
-                            >
-
-                            <span class="custom-radio"></span>
-
-                            <span>
-                                Ya, saya akan hadir
-                            </span>
-
-                        </label>
-
-
-                        <label class="attendance-option">
-
-                            <input
-                                type="radio"
-                                name="attendance"
-                                value="Tidak Hadir"
-                            >
-
-                            <span class="custom-radio"></span>
-
-                            <span>
-                                Maaf, saya tidak dapat hadir
-                            </span>
-
-                        </label>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- JUMLAH -->
-
-                <div
-                    class="form-group"
-                    id="guestCountGroup"
-                >
-
-                    <label>
-                        JUMLAH ORANG YANG HADIR
-                    </label>
-
-
-                    <div class="guest-counter">
-
-
-                        <button
-                            type="button"
-                            id="minusGuest"
-                            class="counter-button"
-                        >
-                            −
-                        </button>
-
-
-                        <span id="guestCount">
-                            1
-                        </span>
-
-
-                        <button
-                            type="button"
-                            id="plusGuest"
-                            class="counter-button"
-                        >
-                            +
-                        </button>
-
-
-                    </div>
-
-
-                    <p class="counter-note">
-                        Maksimal 20 orang
-                    </p>
-
-
-                </div>
-
-
-
-                <!-- PESAN -->
-
-                <div class="form-group">
-
-                    <label for="message">
-                        UCAPAN / PESAN / DOA
-                    </label>
-
-
-                    <textarea
-                        id="message"
-                        rows="5"
-                        placeholder="Tuliskan ucapan, pesan, atau doa untuk Delia..."
-                    ></textarea>
-
-                </div>
-
-
-
-                <button
-                    type="submit"
-                    class="rsvp-submit"
-                >
-
-                    KIRIM KONFIRMASI
-
-                    <span>
-                        ♡
-                    </span>
-
-                </button>
-
-
-            </form>
-
-
-
-            <div
-                id="rsvpSuccess"
-                class="rsvp-success hidden"
-            >
-
-
-                <div class="success-icon">
-                    ✓
-                </div>
-
-
-                <h3>
-                    Terima Kasih
-                </h3>
-
-
-                <p>
-
-                    Konfirmasi Anda telah diterima.
-                    Kami sangat bersukacita dan
-                    menantikan kebersamaan kita.
-
-                </p>
-
-
-                <span>
-                    Sampai bertemu di Delia's Beach Party.
-                </span>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ==================================================
-             CLOSING
-        =================================================== -->
-
-        <section class="section closing-section reveal">
-
-
-            <div class="closing-cross">
-
-
-                <div class="cross-shape">
-
-                    <span class="cross-vertical"></span>
-
-                    <span class="cross-horizontal"></span>
-
-                </div>
-
-
-                <div class="cross-flowers">
-                    ✿ ❀ ✿
-                </div>
-
-
-            </div>
-
-
-            <p class="closing-text">
-
-                “Terima kasih atas doa, kasih,
-                dan kehadiran Bapak/Ibu, Saudara/i,
-                serta sahabat sekalian.”
-
-            </p>
-
-
-            <p class="closing-small">
-
-                Kehadiran Anda adalah sukacita
-                bagi kami.
-
-            </p>
-
-
-            <h2 class="closing-title">
-
-                Delia's
-                <span>Beach Party</span>
-
-            </h2>
-
-
-            <div class="closing-flower">
-                ✿ ❀ ✿
-            </div>
-
-
-        </section>
-
-
-    </main>
-
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        Maria Delia Bedu
-
-        <span>
-            With Love ♡
-        </span>
-
-    </footer>
-
-
-
-    <!-- JAVASCRIPT -->
-
-    <script src="script.js"></script>
-
-
-</body>
-
-</html>
+/* ==================================================
+   DELIA'S BEACH PARTY
+   STYLE CSS
+================================================== */
+
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #fffaf9;
+    color: #5a4542;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+
+/* ==================================================
+   VARIABLES
+================================================== */
+
+:root {
+    --pink-light: #fcebed;
+    --pink-soft: #f8dfe3;
+    --pink: #e9b9c1;
+    --pink-dark: #b97b86;
+    --brown: #73534d;
+    --brown-dark: #563d39;
+    --cream: #fffaf9;
+    --white: #ffffff;
+}
+
+
+/* ==================================================
+   GENERAL SECTION
+================================================== */
+
+.section {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 100px 24px;
+}
+
+.section-title {
+    margin-bottom: 45px;
+    color: var(--brown);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 10vw, 5rem);
+    font-weight: 500;
+    line-height: 0.95;
+    text-align: center;
+}
+
+.section-title span {
+    display: block;
+    color: var(--pink-dark);
+    font-style: italic;
+}
+
+
+/* ==================================================
+   HIDDEN
+================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==================================================
+   REVEAL ANIMATION
+================================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==================================================
+   OPENING SCREEN
+================================================== */
+
+#openingScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--pink-light);
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+#openingScreen.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.opening-content {
+    position: relative;
+    width: min(90%, 500px);
+    text-align: center;
+}
+
+
+/* ==================================================
+   FLOWER DECORATION
+================================================== */
+
+.flower {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.flower img {
+    width: 100%;
+}
+
+.flower-top-left {
+    top: -35px;
+    left: -25px;
+    width: 120px;
+}
+
+.flower-top-right {
+    top: -35px;
+    right: -25px;
+    width: 120px;
+}
+
+.flower-bottom-left {
+    bottom: -35px;
+    left: -25px;
+    width: 120px;
+}
+
+.flower-bottom-right {
+    bottom: -35px;
+    right: -25px;
+    width: 120px;
+}
+
+
+/* ==================================================
+   COVER
+================================================== */
+
+.cover-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.cover-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.cover-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+    background: rgba(255, 250, 249, 0.28);
+}
+
+
+/* ==================================================
+   COVER TITLE
+================================================== */
+
+.cover-title {
+    color: var(--brown);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 12vw, 5rem);
+    font-weight: 500;
+    line-height: 0.85;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.65);
+}
+
+.cover-title span {
+    display: block;
+    margin-top: 0;
+    color: var(--pink-dark);
+    font-size: 0.75em;
+    font-style: italic;
+    line-height: 0.85;
+}
+
+
+/* ==================================================
+   CROSS
+================================================== */
+
+.big-cross {
+    position: relative;
+    width: 45px;
+    height: 70px;
+    margin: 28px auto 20px;
+}
+
+.big-cross::before {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--brown);
+}
+
+.big-cross::after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 13px;
+    top: 20px;
+    left: 0;
+    background: var(--brown);
+}
+
+
+/* ==================================================
+   OPEN BUTTON
+================================================== */
+
+.open-button {
+    display: inline-block;
+    padding: 14px 30px;
+    border: 1px solid var(--brown);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--brown);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.open-button:hover {
+    background: var(--brown);
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   MUSIC BUTTON
+================================================== */
+
+.music-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9000;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--brown);
+    color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.music-button.playing {
+    animation: musicPulse 1.5s infinite;
+}
+
+@keyframes musicPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(115, 83, 77, 0.35);
+    }
+
+    70% {
+        box-shadow: 0 0 0 12px rgba(115, 83, 77, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(115, 83, 77, 0);
+    }
+}
+
+
+/* ==================================================
+   HERO / WELCOME
+================================================== */
+
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--cream);
+}
+
+.hero-content {
+    max-width: 650px;
+    margin: auto;
+}
+
+.hero-small {
+    margin-bottom: 20px;
+    color: var(--pink-dark);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+}
+
+.hero-title {
+    margin-bottom: 20px;
+    color: var(--brown);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 12vw, 5rem);
+    font-weight: 500;
+    line-height: 0.9;
+}
+
+.hero-title span {
+    display: block;
+    color: var(--pink-dark);
+    font-style: italic;
+}
+
+.hero-text {
+    max-width: 600px;
+    margin: auto;
+    color: #806b67;
+    font-size: 0.9rem;
+    line-height: 1.9;
+}
+
+
+/* ==================================================
+   VERSE
+================================================== */
+
+.verse-section {
+    text-align: center;
+    background: var(--pink-light);
+}
+
+.verse-mark {
+    margin-bottom: 20px;
+    color: var(--pink-dark);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 4rem;
+}
+
+.verse-text {
+    max-width: 700px;
+    margin: auto;
+    color: var(--brown);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.5rem, 5vw, 2.3rem);
+    line-height: 1.4;
+}
+
+.verse-reference {
+    margin-top: 25px;
+    color: var(--pink-dark);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
+
+
+/* ==================================================
+   ABOUT
+================================================== */
+
+.about-section {
+    background: var(--cream);
+}
+
+.about-image {
+    max-width: 450px;
+    margin: 0 auto 40px;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.about-image img {
+    width: 100%;
+}
+
+.about-text {
+    max-width: 680px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-text p {
+    margin-bottom: 18px;
+    color: #806b67;
+    font-size: 0.9rem;
+    line-height: 1.9;
+}
+
+.about-name {
+    margin-top: 25px;
+    color: var(--brown);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+}
+
+
+/* ==================================================
+   GALLERY
+================================================== */
+
+.gallery-section {
+    background: var(--pink-light);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 14px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.gallery-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+
+/* ==================================================
+   COUNTDOWN
+================================================== */
+
+.countdown-section {
+    text-align: center;
+    background: var(--pink-light);
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 600px;
+    margin: 40px auto 0;
+}
+
+.count-box {
+    padding: 18px 5px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(115, 83, 77, 0.06);
+}
+
+.count-box span {
+    display: block;
+    color: var(--brown);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.count-box small {
+    color: var(--pink-dark);
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.countdown-date {
+    margin-top: 8px;
+    color: var(--brown);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.9;
+    letter-spacing: 0.12em;
+}
+
+
+/* ==================================================
+   EVENT DETAILS
+================================================== */
+
+.details-section {
+    background: var(--cream);
+}
+
+.details-wrapper {
+    max-width: 700px;
+    margin: auto;
+}
+
+.detail-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(115, 83, 77, 0.15);
+}
+
+.detail-card:last-child {
+    border-bottom: none;
+}
+
+.detail-icon {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--pink-light);
+    color: var(--pink-dark);
+    font-size: 1.3rem;
+}
+
+.detail-card small {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--pink-dark);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+}
+
+.detail-card h3 {
+    margin-bottom: 5px;
+    color: var(--brown);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.detail-card p {
+    color: #806b67;
+    font-size: 0.82rem;
+    line-height: 1.7;
+}
+
+
+/* ==================================================
+   GAMES / NOTES
+================================================== */
+
+.games-section {
+    background: var(--pink-light);
+}
+
+.games-list {
+    max-width: 700px;
+    margin: auto;
+}
+
+.game-card {
+    margin-bottom: 18px;
+    padding: 24px;
+    border-radius: 14px;
+    background: white;
+}
+
+.game-card h3 {
+    margin-bottom: 10px;
+    color: var(--brown);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.5rem;
+}
+
+.game-card p {
+    color: #806b67;
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+
+/* ==================================================
+   RSVP
+================================================== */
+
+.rsvp-section {
+    background: var(--cream);
+}
+
+.rsvp-wrapper {
+    max-width: 600px;
+    margin: auto;
+}
+
+.rsvp-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--brown);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba(115, 83, 77, 0.2);
+    border-radius: 10px;
+    outline: none;
+    background: white;
+    color: var(--brown);
+    font-size: 0.85rem;
+    transition: border 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    border-color: var(--pink-dark);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+/* ==================================================
+   RSVP ATTENDANCE
+================================================== */
+
+/*
+   Selector langsung menggunakan
+   input[name="attendance"]
+   agar cocok dengan script.js
+*/
+
+input[name="attendance"] {
+    appearance: auto;
+    -webkit-appearance: radio;
+
+    width: 18px;
+    height: 18px;
+
+    margin: 0 7px 0 0;
+
+    accent-color: var(--pink-dark);
+
+    cursor: pointer;
+
+    vertical-align: middle;
+}
+
+
+/* Label RSVP */
+
+input[name="attendance"] + span {
+    cursor: pointer;
+}
+
+
+/*
+   Kalau radio berada langsung di dalam label,
+   seluruh label bisa diklik.
+*/
+
+label:has(input[name="attendance"]) {
+    cursor: pointer;
+}
+
+
+/* ==================================================
+   GUEST COUNTER
+================================================== */
+
+.guest-count-group {
+    margin-top: 20px;
+}
+
+.guest-counter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.guest-counter button {
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--pink-dark);
+    border-radius: 50%;
+    background: white;
+    color: var(--pink-dark);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.guest-counter button:hover {
+    background: var(--pink-dark);
+    color: white;
+}
+
+.guest-counter span {
+    min-width: 30px;
+    color: var(--brown);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* ==================================================
+   RSVP BUTTON
+================================================== */
+
+.rsvp-button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    background: var(--brown);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.rsvp-button:hover {
+    background: var(--brown-dark);
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   RSVP SUCCESS
+================================================== */
+
+.rsvp-success {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.rsvp-success-icon {
+    margin-bottom: 20px;
+    color: var(--pink-dark);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 4rem;
+}
+
+.rsvp-success h3 {
+    margin-bottom: 10px;
+    color: var(--brown);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+}
+
+.rsvp-success p {
+    color: #806b67;
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+
+/* ==================================================
+   CLOSING
+================================================== */
+
+.closing-section {
+    padding-top: 100px;
+    padding-bottom: 80px;
+    text-align: center;
+    background: var(--cream);
+}
+
+.closing-cross {
+    margin-bottom: 50px;
+}
+
+.closing-text {
+    max-width: 650px;
+    margin: auto;
+    color: var(--brown);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.6rem, 5vw, 2.3rem);
+    line-height: 1.4;
+}
+
+.closing-small {
+    margin-top: 20px;
+    color: #806b67;
+    font-size: 0.78rem;
+    line-height: 1.8;
+}
+
+
+/* ==================================================
+   CLOSING TITLE
+================================================== */
+
+.closing-title {
+    margin-top: 45px;
+    color: var(--brown);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 12vw, 5rem);
+    font-weight: 500;
+    line-height: 0.85;
+    text-align: center;
+}
+
+.closing-title span {
+    display: block;
+    margin-top: 0;
+    color: var(--pink-dark);
+    font-size: 0.75em;
+    font-style: italic;
+    line-height: 0.85;
+}
+
+.closing-flower {
+    width: 80px;
+    margin: 20px auto 0;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    padding: 35px 20px;
+    text-align: center;
+    background: var(--brown);
+    color: white;
+}
+
+.footer-name {
+    margin-bottom: 8px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.5rem;
+}
+
+.footer-love {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+}
+
+
+/* ==================================================
+   DESKTOP
+================================================== */
+
+@media (min-width: 768px) {
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-item:nth-child(3n + 1) {
+        transform: translateY(30px);
+    }
+
+    .gallery-item:nth-child(3n + 2) {
+        transform: translateY(50px);
+    }
+
+    .gallery-item:nth-child(3n) {
+        transform: translateY(70px);
+    }
+
+    .gallery-item.active {
+        transform: translateY(0);
+    }
+
+    .flower-top-left,
+    .flower-top-right,
+    .flower-bottom-left,
+    .flower-bottom-right {
+        width: 150px;
+    }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    .section {
+        padding: 80px 20px;
+    }
+
+    .gallery-grid {
+        gap: 10px;
+    }
+
+    .countdown {
+        gap: 7px;
+    }
+
+    .count-box {
+        padding: 15px 3px;
+    }
+
+    .count-box span {
+        font-size: 1.6rem;
+    }
+
+    .count-box small {
+        font-size: 0.5rem;
+    }
+
+    .countdown-date {
+        margin-top: 8px;
+        font-size: 0.65rem;
+        line-height: 1.8;
+    }
+
+    .detail-card {
+        gap: 14px;
+    }
+
+    .detail-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+
+    .closing-title {
+        margin-top: 40px;
+        font-size: 3rem;
+        line-height: 0.85;
+    }
+
+    .closing-title span {
+        line-height: 0.85;
+    }
+
+    .music-button {
+        right: 15px;
+        bottom: 15px;
+        width: 45px;
+        height: 45px;
+    }
+}
