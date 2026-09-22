@@ -10,19 +10,16 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Delia's Celebration</title>
+    <title>Delia's Beach Party</title>
 
     <meta
         name="description"
-        content="Delia's Celebration - Maria Delia Bedu"
+        content="Delia's Beach Party - Maria Delia Bedu"
     >
 
-    <!-- GOOGLE FONTS -->
+    <!-- GOOGLE FONT -->
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
         rel="preconnect"
@@ -48,43 +45,39 @@
 <body>
 
 
-    <!-- =========================================
-         OPENING SCREEN
-    ========================================== -->
+    <!-- ==================================================
+         OPENING
+    =================================================== -->
 
     <section
         id="openingScreen"
         class="opening-screen"
     >
 
-        <!-- Ornamen bunga -->
-
-        <div class="opening-flower flower-top-left">
-            ❀
-        </div>
-
-        <div class="opening-flower flower-top-right">
+        <div class="opening-decoration flower-one">
             ✿
         </div>
 
-        <div class="opening-flower flower-bottom-left">
-            ✿
+        <div class="opening-decoration flower-two">
+            ❀
         </div>
 
-        <div class="opening-flower flower-bottom-right">
+        <div class="opening-decoration flower-three">
             ❀
+        </div>
+
+        <div class="opening-decoration flower-four">
+            ✿
         </div>
 
 
         <div class="opening-content">
 
 
-            <p class="opening-subtitle">
+            <p class="opening-small">
                 A SPECIAL CELEBRATION
             </p>
 
-
-            <!-- FOTO COVER -->
 
             <div class="cover-frame">
 
@@ -100,22 +93,24 @@
             </div>
 
 
-            <p class="invited-text">
+            <p class="opening-invite">
                 YOU ARE INVITED TO
             </p>
 
 
-            <h1>
+            <h1 class="opening-title">
+
                 Delia's
-                <span>Celebration</span>
+                <span>Beach Party</span>
+
             </h1>
 
 
-            <!-- SALIB -->
+            <!-- SALIB BESAR -->
 
-            <div class="cross-area">
+            <div class="big-cross">
 
-                <div class="cross">
+                <div class="cross-shape">
 
                     <span class="cross-vertical"></span>
 
@@ -131,19 +126,15 @@
             </div>
 
 
-            <!-- OPEN BUTTON -->
-
             <button
                 id="openInvitation"
                 class="open-button"
                 type="button"
             >
 
-                <span>
-                    OPEN INVITATION
-                </span>
+                OPEN INVITATION
 
-                <span class="arrow">
+                <span>
                     ↓
                 </span>
 
@@ -156,9 +147,9 @@
 
 
 
-    <!-- =========================================
-         BACKGROUND MUSIC
-    ========================================== -->
+    <!-- ==================================================
+         MUSIC
+    =================================================== -->
 
     <audio
         id="backgroundMusic"
@@ -173,11 +164,6 @@
 
     </audio>
 
-
-
-    <!-- =========================================
-         MUSIC BUTTON
-    ========================================== -->
 
     <button
         id="musicButton"
@@ -194,9 +180,9 @@
 
 
 
-    <!-- =========================================
+    <!-- ==================================================
          MAIN INVITATION
-    ========================================== -->
+    =================================================== -->
 
     <main
         id="invitation"
@@ -204,19 +190,18 @@
     >
 
 
+        <!-- ==================================================
+             WELCOME
+        =================================================== -->
 
-        <!-- =====================================
-             HERO / WELCOME
-        ====================================== -->
-
-        <section class="section hero-section">
+        <section class="section hero-section reveal">
 
 
-            <div class="corner-flower left">
+            <div class="corner-flower corner-left">
                 ❀
             </div>
 
-            <div class="corner-flower right">
+            <div class="corner-flower corner-right">
                 ✿
             </div>
 
@@ -226,9 +211,11 @@
             </p>
 
 
-            <h2>
+            <h2 class="section-title">
+
                 Delia's
-                <span>Celebration</span>
+                <span>Beach Party</span>
+
             </h2>
 
 
@@ -254,11 +241,12 @@
 
                 </p>
 
+
                 <p>
 
-                    Kehadiran, doa, dan kasih dari setiap orang yang hadir
-                    akan menjadi sukacita dan kenangan yang indah bagi
-                    Delia dan keluarga.
+                    Mari menikmati kebersamaan, sukacita, permainan,
+                    makanan, serta suasana pantai dalam sebuah momen
+                    yang sederhana namun penuh kenangan.
 
                 </p>
 
@@ -269,24 +257,24 @@
 
 
 
-        <!-- =====================================
+        <!-- ==================================================
              VERSE
-        ====================================== -->
+        =================================================== -->
 
-        <section class="section verse-section">
+        <section class="section verse-section reveal">
 
 
             <div class="verse-card">
 
 
-                <div class="verse-flower">
+                <div class="verse-decoration">
                     ✿
                 </div>
 
 
-                <div class="verse-label">
+                <p class="verse-label">
                     FIRMAN TUHAN
-                </div>
+                </p>
 
 
                 <blockquote>
@@ -298,9 +286,9 @@
                 </blockquote>
 
 
-                <div class="verse-reference">
+                <p class="verse-reference">
                     YOHANES 12:46
-                </div>
+                </p>
 
 
             </div>
@@ -310,11 +298,11 @@
 
 
 
-        <!-- =====================================
+        <!-- ==================================================
              ABOUT DELIA
-        ====================================== -->
+        =================================================== -->
 
-        <section class="section about-section">
+        <section class="section about-section reveal">
 
 
             <p class="eyebrow">
@@ -322,9 +310,11 @@
             </p>
 
 
-            <h2>
+            <h2 class="section-title">
+
                 Maria Delia
                 <span>Bedu</span>
+
             </h2>
 
 
@@ -360,12 +350,12 @@
 
                 <p>
 
-                    Hari ini menjadi momen istimewa untuk bersyukur
-                    atas kehidupan, pertumbuhan, kasih Tuhan, serta
-                    setiap perjalanan yang telah Tuhan izinkan.
+                    Hari istimewa ini menjadi kesempatan untuk
+                    bersyukur atas kehidupan, pertumbuhan,
+                    kasih Tuhan, serta setiap perjalanan yang
+                    telah Tuhan izinkan.
 
                 </p>
-
 
             </div>
 
@@ -374,129 +364,170 @@
 
 
 
-        <!-- =====================================
+        <!-- ==================================================
              GALLERY
-        ====================================== -->
+        =================================================== -->
 
         <section class="section gallery-section">
 
 
-            <p class="eyebrow">
-                BEAUTIFUL MEMORIES
-            </p>
+            <div class="reveal">
+
+                <p class="eyebrow">
+                    BEAUTIFUL MEMORIES
+                </p>
 
 
-            <h2>
-                Delia's
-                <span>Memories</span>
-            </h2>
+                <h2 class="section-title">
+
+                    Delia's
+                    <span>Memories</span>
+
+                </h2>
 
 
-            <p class="gallery-intro">
+                <p class="gallery-intro">
 
-                Sedikit potret kenangan dan perjalanan
-                Maria Delia Bedu yang ingin kami bagikan
-                dalam perayaan istimewa ini.
+                    Beberapa potret kecil dari perjalanan
+                    dan kenangan Maria Delia Bedu.
 
-            </p>
+                </p>
+
+            </div>
 
 
             <div class="gallery">
 
 
-                <div class="gallery-item gallery-large rotate-left">
+                <div class="gallery-item reveal">
+
+                    <div class="photo-number">
+                        01
+                    </div>
 
                     <img
                         src="assets/delia-02.jpg"
-                        alt="Kenangan Delia 2"
+                        alt="Kenangan Delia"
                         loading="lazy"
                     >
 
                 </div>
 
 
-                <div class="gallery-item gallery-small rotate-right">
+                <div class="gallery-item reveal">
+
+                    <div class="photo-number">
+                        02
+                    </div>
 
                     <img
                         src="assets/delia-03.jpg"
-                        alt="Kenangan Delia 3"
+                        alt="Kenangan Delia"
                         loading="lazy"
                     >
 
                 </div>
 
 
-                <div class="gallery-item gallery-tall rotate-left">
+                <div class="gallery-item reveal">
+
+                    <div class="photo-number">
+                        03
+                    </div>
 
                     <img
                         src="assets/delia-04.jpg"
-                        alt="Kenangan Delia 4"
+                        alt="Kenangan Delia"
                         loading="lazy"
                     >
 
                 </div>
 
 
-                <div class="gallery-item gallery-small rotate-right">
+                <div class="gallery-item reveal">
+
+                    <div class="photo-number">
+                        04
+                    </div>
 
                     <img
                         src="assets/delia-05.jpg"
-                        alt="Kenangan Delia 5"
+                        alt="Kenangan Delia"
                         loading="lazy"
                     >
 
                 </div>
 
 
-                <div class="gallery-item gallery-wide rotate-left">
+                <div class="gallery-item reveal">
+
+                    <div class="photo-number">
+                        05
+                    </div>
 
                     <img
                         src="assets/delia-06.jpg"
-                        alt="Kenangan Delia 6"
+                        alt="Kenangan Delia"
                         loading="lazy"
                     >
 
                 </div>
 
 
-                <div class="gallery-item gallery-small rotate-right">
+                <div class="gallery-item reveal">
+
+                    <div class="photo-number">
+                        06
+                    </div>
 
                     <img
                         src="assets/delia-07.jpg"
-                        alt="Kenangan Delia 7"
+                        alt="Kenangan Delia"
                         loading="lazy"
                     >
 
                 </div>
 
 
-                <div class="gallery-item gallery-tall rotate-left">
+                <div class="gallery-item reveal">
+
+                    <div class="photo-number">
+                        07
+                    </div>
 
                     <img
                         src="assets/delia-08.jpg"
-                        alt="Kenangan Delia 8"
+                        alt="Kenangan Delia"
                         loading="lazy"
                     >
 
                 </div>
 
 
-                <div class="gallery-item gallery-small rotate-right">
+                <div class="gallery-item reveal">
+
+                    <div class="photo-number">
+                        08
+                    </div>
 
                     <img
                         src="assets/delia-09.jpg"
-                        alt="Kenangan Delia 9"
+                        alt="Kenangan Delia"
                         loading="lazy"
                     >
 
                 </div>
 
 
-                <div class="gallery-item gallery-large rotate-left">
+                <div class="gallery-item reveal">
+
+                    <div class="photo-number">
+                        09
+                    </div>
 
                     <img
                         src="assets/delia-10.jpg"
-                        alt="Kenangan Delia 10"
+                        alt="Kenangan Delia"
                         loading="lazy"
                     >
 
@@ -510,11 +541,11 @@
 
 
 
-        <!-- =====================================
+        <!-- ==================================================
              COUNTDOWN
-        ====================================== -->
+        =================================================== -->
 
-        <section class="section countdown-section">
+        <section class="section countdown-section reveal">
 
 
             <div class="countdown-decoration">
@@ -527,9 +558,11 @@
             </p>
 
 
-            <h2>
+            <h2 class="section-title">
+
                 See You
                 <span>Soon</span>
+
             </h2>
 
 
@@ -594,7 +627,9 @@
             <p class="countdown-date">
 
                 SABTU, 26 SEPTEMBER 2026
+
                 <br>
+
                 10.00 WITA – SELESAI
 
             </p>
@@ -604,11 +639,11 @@
 
 
 
-        <!-- =====================================
-             EVENT DETAILS
-        ====================================== -->
+        <!-- ==================================================
+             EVENT
+        =================================================== -->
 
-        <section class="section details-section">
+        <section class="section details-section reveal">
 
 
             <p class="eyebrow">
@@ -616,16 +651,16 @@
             </p>
 
 
-            <h2>
+            <h2 class="section-title">
+
                 Join Our
                 <span>Celebration</span>
+
             </h2>
 
 
             <div class="detail-list">
 
-
-                <!-- TANGGAL -->
 
                 <div class="detail-card">
 
@@ -638,12 +673,14 @@
                     <div>
 
                         <small>
-                            TANGGAL
+                            TANGGAL & WAKTU
                         </small>
+
 
                         <h3>
                             Sabtu, 26 September 2026
                         </h3>
+
 
                         <p>
                             10.00 WITA – Selesai
@@ -655,8 +692,6 @@
                 </div>
 
 
-
-                <!-- LOKASI -->
 
                 <div class="detail-card">
 
@@ -672,9 +707,11 @@
                             LOKASI
                         </small>
 
+
                         <h3>
                             Aimere, Ngada
                         </h3>
+
 
                         <p>
 
@@ -691,45 +728,8 @@
                 </div>
 
 
-
-                <!-- KELUARGA -->
-
-                <div class="detail-card">
-
-
-                    <div class="detail-icon">
-                        ♡
-                    </div>
-
-
-                    <div>
-
-                        <small>
-                            KELUARGA
-                        </small>
-
-                        <h3>
-                            Daniel & Linda
-                        </h3>
-
-                        <p>
-
-                            Daniel Alfonsius Indra Bedu
-                            & Linda Purnama Tjondro
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
             </div>
 
-
-
-            <!-- GOOGLE MAPS -->
 
             <a
                 href="https://maps.app.goo.gl/mZ2usXbHC9AjVkhy7"
@@ -738,9 +738,7 @@
                 class="maps-button"
             >
 
-                <span>
-                    BUKA LOKASI DI GOOGLE MAPS
-                </span>
+                BUKA LOKASI DI GOOGLE MAPS
 
                 <span>
                     →
@@ -753,11 +751,11 @@
 
 
 
-        <!-- =====================================
-             GAMES / ACTIVITIES
-        ====================================== -->
+        <!-- ==================================================
+             GAMES & NOTES
+        =================================================== -->
 
-        <section class="section fun-section">
+        <section class="section fun-section reveal">
 
 
             <div class="fun-card">
@@ -773,44 +771,132 @@
                 </p>
 
 
-                <h2>
+                <h2 class="section-title">
+
                     Games &
                     <span>Activities</span>
+
                 </h2>
 
 
-                <p>
+                <p class="fun-intro">
 
-                    Selain menikmati kebersamaan,
-                    akan ada berbagai permainan dan
-                    kegiatan seru yang dapat dinikmati
-                    bersama keluarga dan sahabat.
+                    Selain menikmati kebersamaan, akan ada
+                    berbagai permainan dan kegiatan seru yang
+                    dapat dinikmati bersama keluarga dan sahabat.
 
                 </p>
 
 
-                <div class="clothes-note">
+
+                <!-- NOTE PAKAIAN -->
+
+                <div class="note-card">
 
 
-                    <div class="clothes-icon">
-                        ♡
+                    <div class="note-icon">
+                        01
                     </div>
 
 
                     <div>
 
-                        <strong>
-                            Jangan Lupa!
-                        </strong>
+                        <h3>
+                            Dress Code
+                        </h3>
 
 
                         <p>
 
-                            Mohon membawa pakaian ganti
-                            untuk anak-anak maupun orang tua,
-                            karena akan ada kegiatan dan
-                            permainan yang mungkin membuat
-                            pakaian menjadi basah atau kotor.
+                            Untuk suasana yang lebih nyaman dan
+                            serasi, Bapak/Ibu, Saudara/i, serta
+                            sahabat sekalian dipersilakan untuk
+                            mengenakan pakaian yang sederhana
+                            dan nyaman.
+
+                            <br><br>
+
+                            Jika memungkinkan, kami juga
+                            mengimbau untuk mengenakan
+                            pakaian berwarna putih.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- NOTE MAKANAN -->
+
+                <div class="note-card">
+
+
+                    <div class="note-icon">
+                        02
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Makanan
+                        </h3>
+
+
+                        <p>
+
+                            Sebagian hidangan telah kami
+                            persiapkan untuk dinikmati bersama.
+
+                            <br><br>
+
+                            Untuk hidangan lainnya, Bapak/Ibu,
+                            Saudara/i, serta sahabat sekalian
+                            dapat memilih sesuai selera.
+                            Hidangan tersebut nantinya akan
+                            kami siapkan dan masak sesuai
+                            pilihan.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- NOTE BAJU GANTI -->
+
+                <div class="note-card">
+
+
+                    <div class="note-icon">
+                        03
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Pakaian Ganti
+                        </h3>
+
+
+                        <p>
+
+                            Karena akan ada berbagai permainan
+                            dan aktivitas bersama, mohon
+                            membawa pakaian ganti, baik untuk
+                            anak-anak maupun orang tua.
+
+                            <br><br>
+
+                            Hal ini untuk menjaga kenyamanan
+                            setelah mengikuti kegiatan.
 
                         </p>
 
@@ -827,11 +913,11 @@
 
 
 
-        <!-- =====================================
+        <!-- ==================================================
              RSVP
-        ====================================== -->
+        =================================================== -->
 
-        <section class="section rsvp-section">
+        <section class="section rsvp-section reveal">
 
 
             <p class="eyebrow">
@@ -839,9 +925,11 @@
             </p>
 
 
-            <h2>
+            <h2 class="section-title">
+
                 Will You
                 <span>Join Us?</span>
+
             </h2>
 
 
@@ -849,9 +937,8 @@
 
                 Mohon konfirmasi kehadiran Bapak/Ibu,
                 Saudara/i, serta sahabat sekalian.
-                Kami sangat menantikan kehadiran Anda
-                untuk merayakan momen istimewa ini
-                bersama-sama.
+                Kami sangat menantikan kebersamaan
+                kita di hari istimewa ini.
 
             </p>
 
@@ -900,6 +987,7 @@
                                 type="radio"
                                 name="attendance"
                                 value="Hadir"
+                                required
                             >
 
                             <span class="custom-radio"></span>
@@ -935,7 +1023,7 @@
 
 
 
-                <!-- JUMLAH TAMU -->
+                <!-- JUMLAH -->
 
                 <div
                     class="form-group"
@@ -985,7 +1073,7 @@
 
 
 
-                <!-- UCAPAN -->
+                <!-- PESAN -->
 
                 <div class="form-group">
 
@@ -1004,8 +1092,6 @@
 
 
 
-                <!-- SUBMIT -->
-
                 <button
                     type="submit"
                     class="rsvp-submit"
@@ -1023,8 +1109,6 @@
             </form>
 
 
-
-            <!-- RSVP SUCCESS -->
 
             <div
                 id="rsvpSuccess"
@@ -1052,7 +1136,7 @@
 
 
                 <span>
-                    Sampai bertemu di hari istimewa Delia.
+                    Sampai bertemu di Delia's Beach Party.
                 </span>
 
 
@@ -1063,17 +1147,17 @@
 
 
 
-        <!-- =====================================
+        <!-- ==================================================
              CLOSING
-        ====================================== -->
+        =================================================== -->
 
-        <section class="section closing-section">
+        <section class="section closing-section reveal">
 
 
             <div class="closing-cross">
 
 
-                <div class="cross">
+                <div class="cross-shape">
 
                     <span class="cross-vertical"></span>
 
@@ -1107,9 +1191,11 @@
             </p>
 
 
-            <h2>
+            <h2 class="closing-title">
+
                 Delia's
-                <span>Celebration</span>
+                <span>Beach Party</span>
+
             </h2>
 
 
@@ -1121,14 +1207,11 @@
         </section>
 
 
-
     </main>
 
 
 
-    <!-- =========================================
-         FOOTER
-    ========================================== -->
+    <!-- FOOTER -->
 
     <footer>
 
