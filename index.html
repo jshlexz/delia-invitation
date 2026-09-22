@@ -1,686 +1,386 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Delia's Beach Party</title>
 
-    <meta
-        name="description"
-        content="Delia's Beach Party - Maria Delia Bedu"
-    >
-
-    <!-- GOOGLE FONT -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- CSS -->
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+    <!-- ========================================= -->
+    <!-- OPENING / COVER -->
+    <!-- ========================================= -->
 
-    <!-- ==================================================
-         OPENING
-    =================================================== -->
+    <section id="opening" class="opening">
 
-    <section
-        id="openingScreen"
-        class="opening-screen"
-    >
-
-        <div class="opening-decoration flower-one">
-            ✿
-        </div>
-
-        <div class="opening-decoration flower-two">
-            ❀
-        </div>
-
-        <div class="opening-decoration flower-three">
-            ❀
-        </div>
-
-        <div class="opening-decoration flower-four">
-            ✿
-        </div>
-
+        <div class="opening-overlay"></div>
 
         <div class="opening-content">
 
-
-            <p class="opening-small">
-                A SPECIAL CELEBRATION
-            </p>
-
-
-            <div class="cover-frame">
-
-                <div class="cover-photo">
-
-                    <img
-                        src="assets/sampul%20delia.jpg"
-                        alt="Maria Delia Bedu"
-                    >
-
-                </div>
-
+            <div class="opening-cross">
+                <div class="cross-vertical"></div>
+                <div class="cross-horizontal"></div>
             </div>
 
+            <div class="decorative-flowers">
+                ✿ ❀ ✿
+            </div>
 
-            <p class="opening-invite">
-                YOU ARE INVITED TO
+            <p class="opening-subtitle">
+                You are invited to
             </p>
-
 
             <h1 class="opening-title">
-
-                Delia's
-                <span>Beach Party</span>
-
+                <span>Delia's</span>
+                <strong>Beach Party</strong>
             </h1>
 
-
-            <!-- SALIB BESAR -->
-
-            <div class="big-cross">
-
-                <div class="cross-shape">
-
-                    <span class="cross-vertical"></span>
-
-                    <span class="cross-horizontal"></span>
-
-                </div>
-
-
-                <div class="cross-flowers">
-                    ✿ ❀ ✿
-                </div>
-
+            <div class="decorative-flowers">
+                ✿ ❀ ✿
             </div>
 
-
-            <button
-                id="openInvitation"
-                class="open-button"
-                type="button"
-            >
-
+            <button id="openInvitation" class="open-button">
                 OPEN INVITATION
-
-                <span>
-                    ↓
-                </span>
-
             </button>
-
 
         </div>
 
     </section>
 
 
+    <!-- ========================================= -->
+    <!-- MAIN INVITATION -->
+    <!-- ========================================= -->
 
-    <!-- ==================================================
-         MUSIC
-    =================================================== -->
+    <main id="invitation" class="invitation hidden">
 
-    <audio
-        id="backgroundMusic"
-        loop
-        preload="auto"
-    >
+        <!-- MUSIC -->
+        <audio id="backgroundMusic" loop>
+            <source src="assets/lagu-delia.mp3" type="audio/mpeg">
+        </audio>
 
-        <source
-            src="assets/lagu-delia.mp3"
-            type="audio/mpeg"
-        >
-
-    </audio>
-
-
-    <button
-        id="musicButton"
-        class="music-button"
-        type="button"
-        aria-label="Putar atau hentikan musik"
-    >
-
-        <span id="musicIcon">
+        <button id="musicButton" class="music-button">
             ♫
-        </span>
-
-    </button>
+        </button>
 
 
+        <!-- ========================================= -->
+        <!-- WELCOME -->
+        <!-- ========================================= -->
 
-    <!-- ==================================================
-         MAIN INVITATION
-    =================================================== -->
+        <section class="section welcome-section">
 
-    <main
-        id="invitation"
-        class="hidden"
-    >
+            <div class="container reveal">
 
-
-        <!-- ==================================================
-             WELCOME
-        =================================================== -->
-
-        <section class="section hero-section reveal">
-
-
-            <div class="corner-flower corner-left">
-                ❀
-            </div>
-
-            <div class="corner-flower corner-right">
-                ✿
-            </div>
-
-
-            <p class="eyebrow">
-                WELCOME TO
-            </p>
-
-
-            <h2 class="section-title">
-
-                Delia's
-                <span>Beach Party</span>
-
-            </h2>
-
-
-            <div class="floral-divider">
-
-                <span></span>
-
-                ✿
-
-                <span></span>
-
-            </div>
-
-
-            <div class="intro-text">
-
-                <p>
-
-                    Dengan penuh sukacita dan ucapan syukur kepada Tuhan,
-                    kami mengundang Bapak/Ibu, Saudara/i, serta sahabat
-                    sekalian untuk hadir dan merayakan hari istimewa
-                    bersama Maria Delia Bedu.
-
-                </p>
-
-
-                <p>
-
-                    Mari menikmati kebersamaan, sukacita, permainan,
-                    makanan, serta suasana pantai dalam sebuah momen
-                    yang sederhana namun penuh kenangan.
-
-                </p>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ==================================================
-             VERSE
-        =================================================== -->
-
-        <section class="section verse-section reveal">
-
-
-            <div class="verse-card">
-
-
-                <div class="verse-decoration">
-                    ✿
+                <div class="decorative-flowers">
+                    ✿ ❀ ✿
                 </div>
 
-
-                <p class="verse-label">
-                    FIRMAN TUHAN
+                <p class="eyebrow">
+                    WITH LOVE
                 </p>
 
+                <h2>
+                    Welcome to
+                </h2>
 
-                <blockquote>
+                <h3 class="script-title">
+                    Delia's Beach Party
+                </h3>
 
-                    “Aku telah datang ke dalam dunia sebagai terang,
+                <p class="welcome-text">
+                    Dengan penuh sukacita, kami mengundang
+                    Bapak/Ibu, Saudara/i, serta sahabat sekalian
+                    untuk hadir dan merayakan hari yang istimewa
+                    bersama kami.
+                </p>
+
+                <div class="decorative-flowers">
+                    ✿ ❀ ✿
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- VERSE -->
+        <!-- ========================================= -->
+
+        <section class="section verse-section">
+
+            <div class="container reveal">
+
+                <div class="verse-mark">
+                    “
+                </div>
+
+                <p class="verse-text">
+                    Aku telah datang ke dalam dunia sebagai terang,
                     supaya setiap orang yang percaya kepada-Ku,
-                    jangan tinggal di dalam kegelapan.”
-
-                </blockquote>
-
+                    jangan tinggal di dalam kegelapan.
+                </p>
 
                 <p class="verse-reference">
-                    YOHANES 12:46
+                    Yohanes 12:46
                 </p>
 
-
             </div>
-
 
         </section>
 
 
+        <!-- ========================================= -->
+        <!-- ABOUT DELIA -->
+        <!-- ========================================= -->
 
-        <!-- ==================================================
-             ABOUT DELIA
-        =================================================== -->
+        <section class="section about-section">
 
-        <section class="section about-section reveal">
+            <div class="container">
 
+                <div class="photo-frame reveal">
 
-            <p class="eyebrow">
-                A LITTLE ABOUT HER
-            </p>
+                    <img
+                        src="assets/delia-01.jpg"
+                        alt="Maria Delia Bedu"
+                    >
 
+                </div>
 
-            <h2 class="section-title">
+                <div class="about-content reveal">
 
-                Maria Delia
-                <span>Bedu</span>
+                    <p class="eyebrow">
+                        A SPECIAL DAY
+                    </p>
 
-            </h2>
+                    <h2>
+                        Maria Delia Bedu
+                    </h2>
 
+                    <p class="about-text">
+                        Putri pertama dari
+                    </p>
 
-            <div class="portrait-frame">
-
-                <img
-                    src="assets/delia-01.jpg"
-                    alt="Maria Delia Bedu"
-                    loading="lazy"
-                >
-
-            </div>
-
-
-            <div class="about-text">
-
-                <p>
-
-                    Maria Delia Bedu adalah putri pertama dari
-
-                    <strong>
+                    <p class="parents">
                         Daniel Alfonsius Indra Bedu
-                    </strong>
+                        <br>
+                        &
+                        <br>
+                        Linda Purnama Tjondro
+                    </p>
 
-                    dan
+                    <p class="about-text">
+                        Hari yang penuh sukacita ini menjadi
+                        kesempatan untuk berkumpul, berbagi kasih,
+                        menikmati kebersamaan, dan menciptakan
+                        kenangan indah bersama.
+                    </p>
 
-                    <strong>
-                        Linda Purnama Tjondro.
-                    </strong>
-
-                </p>
-
-
-                <p>
-
-                    Hari istimewa ini menjadi kesempatan untuk
-                    bersyukur atas kehidupan, pertumbuhan,
-                    kasih Tuhan, serta setiap perjalanan yang
-                    telah Tuhan izinkan.
-
-                </p>
+                </div>
 
             </div>
-
 
         </section>
 
 
-
-        <!-- ==================================================
-             GALLERY
-        =================================================== -->
+        <!-- ========================================= -->
+        <!-- GALLERY -->
+        <!-- ========================================= -->
 
         <section class="section gallery-section">
 
+            <div class="container">
 
-            <div class="reveal">
+                <div class="section-heading reveal">
+
+                    <p class="eyebrow">
+                        MEMORIES
+                    </p>
+
+                    <h2>
+                        Little Moments
+                    </h2>
+
+                    <p>
+                        Setiap perjalanan memiliki cerita,
+                        dan setiap cerita memiliki kenangan.
+                    </p>
+
+                </div>
+
+
+                <div class="gallery">
+
+                    <div class="gallery-item reveal">
+                        <img src="assets/delia-02.jpg" alt="Delia childhood photo">
+                    </div>
+
+                    <div class="gallery-item reveal">
+                        <img src="assets/delia-03.jpg" alt="Delia childhood photo">
+                    </div>
+
+                    <div class="gallery-item reveal">
+                        <img src="assets/delia-04.jpg" alt="Delia childhood photo">
+                    </div>
+
+                    <div class="gallery-item reveal">
+                        <img src="assets/delia-05.jpg" alt="Delia childhood photo">
+                    </div>
+
+                    <div class="gallery-item reveal">
+                        <img src="assets/delia-06.jpg" alt="Delia childhood photo">
+                    </div>
+
+                    <div class="gallery-item reveal">
+                        <img src="assets/delia-07.jpg" alt="Delia childhood photo">
+                    </div>
+
+                    <div class="gallery-item reveal">
+                        <img src="assets/delia-08.jpg" alt="Delia childhood photo">
+                    </div>
+
+                    <div class="gallery-item reveal">
+                        <img src="assets/delia-09.jpg" alt="Delia childhood photo">
+                    </div>
+
+                    <div class="gallery-item reveal">
+                        <img src="assets/delia-10.jpg" alt="Delia childhood photo">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- COUNTDOWN -->
+        <!-- ========================================= -->
+
+        <section class="section countdown-section">
+
+            <div class="container reveal">
+
+                <div class="decorative-flowers countdown-flower">
+                    ✿
+                </div>
 
                 <p class="eyebrow">
-                    BEAUTIFUL MEMORIES
+                    COUNTING THE DAYS
                 </p>
 
-
-                <h2 class="section-title">
-
-                    Delia's
-                    <span>Memories</span>
-
+                <h2 class="countdown-title">
+                    <span>See You</span>
+                    <strong>Soon</strong>
                 </h2>
 
 
-                <p class="gallery-intro">
+                <div class="countdown">
 
-                    Beberapa potret kecil dari perjalanan
-                    dan kenangan Maria Delia Bedu.
+                    <div class="count-box">
+                        <span id="days">00</span>
+                        <small>Days</small>
+                    </div>
 
-                </p>
+                    <div class="count-box">
+                        <span id="hours">00</span>
+                        <small>Hours</small>
+                    </div>
+
+                    <div class="count-box">
+                        <span id="minutes">00</span>
+                        <small>Minutes</small>
+                    </div>
+
+                    <div class="count-box">
+                        <span id="seconds">00</span>
+                        <small>Seconds</small>
+                    </div>
+
+                </div>
+
+
+                <!-- TANGGAL HANYA DI SINI -->
+                <div class="countdown-date">
+
+                    <p>
+                        SABTU, 26 SEPTEMBER 2026
+                    </p>
+
+                    <p>
+                        10.00 WITA – SELESAI
+                    </p>
+
+                </div>
 
             </div>
-
-
-            <div class="gallery">
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        01
-                    </div>
-
-                    <img
-                        src="assets/delia-02.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        02
-                    </div>
-
-                    <img
-                        src="assets/delia-03.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        03
-                    </div>
-
-                    <img
-                        src="assets/delia-04.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        04
-                    </div>
-
-                    <img
-                        src="assets/delia-05.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        05
-                    </div>
-
-                    <img
-                        src="assets/delia-06.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        06
-                    </div>
-
-                    <img
-                        src="assets/delia-07.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        07
-                    </div>
-
-                    <img
-                        src="assets/delia-08.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        08
-                    </div>
-
-                    <img
-                        src="assets/delia-09.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-                <div class="gallery-item reveal">
-
-                    <div class="photo-number">
-                        09
-                    </div>
-
-                    <img
-                        src="assets/delia-10.jpg"
-                        alt="Kenangan Delia"
-                        loading="lazy"
-                    >
-
-                </div>
-
-
-            </div>
-
 
         </section>
 
 
+        <!-- ========================================= -->
+        <!-- EVENT DETAILS -->
+        <!-- ========================================= -->
 
-        <!-- ==================================================
-             COUNTDOWN
-        =================================================== -->
+        <section class="section event-section">
 
-        <section class="section countdown-section reveal">
+            <div class="container">
 
+                <div class="section-heading reveal">
 
-            <div class="countdown-decoration">
-                ✿
-            </div>
+                    <p class="eyebrow">
+                        SAVE THE DATE
+                    </p>
 
-
-            <p class="eyebrow">
-                COUNTING THE DAYS
-            </p>
-
-
-            <h2 class="section-title">
-
-                See You
-                <span>Soon</span>
-
-            </h2>
-
-
-            <div class="countdown">
-
-
-                <div class="count-box">
-
-                    <span id="days">
-                        00
-                    </span>
-
-                    <small>
-                        Days
-                    </small>
+                    <h2>
+                        The Celebration
+                    </h2>
 
                 </div>
 
 
-                <div class="count-box">
+                <div class="event-card reveal">
 
-                    <span id="hours">
-                        00
-                    </span>
+                    <div class="event-item">
 
-                    <small>
-                        Hours
-                    </small>
-
-                </div>
-
-
-                <div class="count-box">
-
-                    <span id="minutes">
-                        00
-                    </span>
-
-                    <small>
-                        Minutes
-                    </small>
-
-                </div>
-
-
-                <div class="count-box">
-
-                    <span id="seconds">
-                        00
-                    </span>
-
-                    <small>
-                        Seconds
-                    </small>
-
-                </div>
-
-
-            </div>
-
-
-            <p class="countdown-date">
-
-                SABTU, 26 SEPTEMBER 2026
-
-                <br>
-
-                10.00 WITA – SELESAI
-
-            </p>
-
-
-        </section>
-
-
-
-        <!-- ==================================================
-             EVENT
-        =================================================== -->
-
-        <section class="section details-section reveal">
-
-
-            <p class="eyebrow">
-                SAVE THE DATE
-            </p>
-
-
-            <h2 class="section-title">
-
-                Join Our
-                <span>Celebration</span>
-
-            </h2>
-
-
-            <div class="detail-list">
-
-
-                <div class="detail-card">
-
-
-                    <div class="detail-icon">
-                        ♡
-                    </div>
-
-
-                    <div>
-
-                        <small>
-                            TANGGAL & WAKTU
-                        </small>
-
+                        <span class="event-icon">
+                            ✿
+                        </span>
 
                         <h3>
-                            Sabtu, 26 September 2026
+                            Hari & Tanggal
                         </h3>
 
+                        <p>
+                            Sabtu, 26 September 2026
+                        </p>
+
+                    </div>
+
+
+                    <div class="event-divider"></div>
+
+
+                    <div class="event-item">
+
+                        <span class="event-icon">
+                            ✿
+                        </span>
+
+                        <h3>
+                            Waktu
+                        </h3>
 
                         <p>
                             10.00 WITA – Selesai
@@ -689,547 +389,396 @@
                     </div>
 
 
-                </div>
+                    <div class="event-divider"></div>
 
 
+                    <div class="event-item">
 
-                <div class="detail-card">
-
-
-                    <div class="detail-icon">
-                        ⌖
-                    </div>
-
-
-                    <div>
-
-                        <small>
-                            LOKASI
-                        </small>
-
-
-                        <h3>
-                            Aimere, Ngada
-                        </h3>
-
-
-                        <p>
-
-                            5R9H+ Unnamed Road,
-                            Aimere, Kec. Aimere,
-                            Kabupaten Ngada,
-                            Nusa Tenggara Timur
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-            <a
-                href="https://maps.app.goo.gl/mZ2usXbHC9AjVkhy7"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="maps-button"
-            >
-
-                BUKA LOKASI DI GOOGLE MAPS
-
-                <span>
-                    →
-                </span>
-
-            </a>
-
-
-        </section>
-
-
-
-        <!-- ==================================================
-             GAMES & NOTES
-        =================================================== -->
-
-        <section class="section fun-section reveal">
-
-
-            <div class="fun-card">
-
-
-                <div class="fun-flower">
-                    ✿
-                </div>
-
-
-                <p class="eyebrow">
-                    LET'S HAVE FUN
-                </p>
-
-
-                <h2 class="section-title">
-
-                    Games &
-                    <span>Activities</span>
-
-                </h2>
-
-
-                <p class="fun-intro">
-
-                    Selain menikmati kebersamaan, akan ada
-                    berbagai permainan dan kegiatan seru yang
-                    dapat dinikmati bersama keluarga dan sahabat.
-
-                </p>
-
-
-
-                <!-- NOTE PAKAIAN -->
-
-                <div class="note-card">
-
-
-                    <div class="note-icon">
-                        01
-                    </div>
-
-
-                    <div>
-
-                        <h3>
-                            Dress Code
-                        </h3>
-
-
-                        <p>
-
-                            Untuk suasana yang lebih nyaman dan
-                            serasi, Bapak/Ibu, Saudara/i, serta
-                            sahabat sekalian dipersilakan untuk
-                            mengenakan pakaian yang sederhana
-                            dan nyaman.
-
-                            <br><br>
-
-                            Jika memungkinkan, kami juga
-                            mengimbau untuk mengenakan
-                            pakaian berwarna putih.
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- NOTE MAKANAN -->
-
-                <div class="note-card">
-
-
-                    <div class="note-icon">
-                        02
-                    </div>
-
-
-                    <div>
-
-                        <h3>
-                            Makanan
-                        </h3>
-
-
-                        <p>
-
-                            Sebagian hidangan telah kami
-                            persiapkan untuk dinikmati bersama.
-
-                            <br><br>
-
-                            Untuk hidangan lainnya, Bapak/Ibu,
-                            Saudara/i, serta sahabat sekalian
-                            dapat memilih sesuai selera.
-                            Hidangan tersebut nantinya akan
-                            kami siapkan dan masak sesuai
-                            pilihan.
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- NOTE BAJU GANTI -->
-
-                <div class="note-card">
-
-
-                    <div class="note-icon">
-                        03
-                    </div>
-
-
-                    <div>
-
-                        <h3>
-                            Pakaian Ganti
-                        </h3>
-
-
-                        <p>
-
-                            Karena akan ada berbagai permainan
-                            dan aktivitas bersama, mohon
-                            membawa pakaian ganti, baik untuk
-                            anak-anak maupun orang tua.
-
-                            <br><br>
-
-                            Hal ini untuk menjaga kenyamanan
-                            setelah mengikuti kegiatan.
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ==================================================
-             RSVP
-        =================================================== -->
-
-        <section class="section rsvp-section reveal">
-
-
-            <p class="eyebrow">
-                KONFIRMASI KEHADIRAN
-            </p>
-
-
-            <h2 class="section-title">
-
-                Will You
-                <span>Join Us?</span>
-
-            </h2>
-
-
-            <p class="rsvp-text">
-
-                Mohon konfirmasi kehadiran Bapak/Ibu,
-                Saudara/i, serta sahabat sekalian.
-                Kami sangat menantikan kebersamaan
-                kita di hari istimewa ini.
-
-            </p>
-
-
-            <form
-                id="rsvpForm"
-                class="rsvp-form"
-            >
-
-
-                <!-- NAMA -->
-
-                <div class="form-group">
-
-                    <label for="guestName">
-                        NAMA
-                    </label>
-
-
-                    <input
-                        type="text"
-                        id="guestName"
-                        placeholder="Masukkan nama Anda"
-                        required
-                    >
-
-                </div>
-
-
-
-                <!-- KEHADIRAN -->
-
-                <div class="form-group">
-
-                    <label>
-                        KONFIRMASI KEHADIRAN
-                    </label>
-
-
-                    <div class="attendance-options">
-
-
-                        <label class="attendance-option">
-
-                            <input
-                                type="radio"
-                                name="attendance"
-                                value="Hadir"
-                                required
-                            >
-
-                            <span class="custom-radio"></span>
-
-                            <span>
-                                Ya, saya akan hadir
-                            </span>
-
-                        </label>
-
-
-                        <label class="attendance-option">
-
-                            <input
-                                type="radio"
-                                name="attendance"
-                                value="Tidak Hadir"
-                            >
-
-                            <span class="custom-radio"></span>
-
-                            <span>
-                                Maaf, saya tidak dapat hadir
-                            </span>
-
-                        </label>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- JUMLAH -->
-
-                <div
-                    class="form-group"
-                    id="guestCountGroup"
-                >
-
-                    <label>
-                        JUMLAH ORANG YANG HADIR
-                    </label>
-
-
-                    <div class="guest-counter">
-
-
-                        <button
-                            type="button"
-                            id="minusGuest"
-                            class="counter-button"
-                        >
-                            −
-                        </button>
-
-
-                        <span id="guestCount">
-                            1
+                        <span class="event-icon">
+                            ✿
                         </span>
 
+                        <h3>
+                            Tempat
+                        </h3>
 
-                        <button
-                            type="button"
-                            id="plusGuest"
-                            class="counter-button"
-                        >
-                            +
-                        </button>
-
+                        <p>
+                            Aimere, Ngada
+                            <br>
+                            Nusa Tenggara Timur
+                        </p>
 
                     </div>
 
-
-                    <p class="counter-note">
-                        Maksimal 20 orang
-                    </p>
-
-
                 </div>
-
-
-
-                <!-- PESAN -->
-
-                <div class="form-group">
-
-                    <label for="message">
-                        UCAPAN / PESAN / DOA
-                    </label>
-
-
-                    <textarea
-                        id="message"
-                        rows="5"
-                        placeholder="Tuliskan ucapan, pesan, atau doa untuk Delia..."
-                    ></textarea>
-
-                </div>
-
-
-
-                <button
-                    type="submit"
-                    class="rsvp-submit"
-                >
-
-                    KIRIM KONFIRMASI
-
-                    <span>
-                        ♡
-                    </span>
-
-                </button>
-
-
-            </form>
-
-
-
-            <div
-                id="rsvpSuccess"
-                class="rsvp-success hidden"
-            >
-
-
-                <div class="success-icon">
-                    ✓
-                </div>
-
-
-                <h3>
-                    Terima Kasih
-                </h3>
-
-
-                <p>
-
-                    Konfirmasi Anda telah diterima.
-                    Kami sangat bersukacita dan
-                    menantikan kebersamaan kita.
-
-                </p>
-
-
-                <span>
-                    Sampai bertemu di Delia's Beach Party.
-                </span>
-
 
             </div>
-
 
         </section>
 
 
+        <!-- ========================================= -->
+        <!-- LOCATION -->
+        <!-- ========================================= -->
 
-        <!-- ==================================================
-             CLOSING
-        =================================================== -->
+        <section class="section location-section">
 
-        <section class="section closing-section reveal">
+            <div class="container reveal">
+
+                <p class="eyebrow">
+                    LOCATION
+                </p>
+
+                <h2>
+                    Where We Meet
+                </h2>
+
+                <p class="location-text">
+                    Aimere, Ngada 5R9H+,
+                    Unnamed Road, Aimere,
+                    Kec. Aimere, Kabupaten Ngada,
+                    Nusa Tenggara Timur
+                </p>
+
+                <a
+                    href="https://maps.app.goo.gl/mZ2usXbHC9AjVkhy7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="maps-button"
+                >
+                    OPEN GOOGLE MAPS
+                </a>
+
+            </div>
+
+        </section>
 
 
-            <div class="closing-cross">
+        <!-- ========================================= -->
+        <!-- GAMES & ACTIVITIES -->
+        <!-- ========================================= -->
 
+        <section class="section activities-section">
 
-                <div class="cross-shape">
+            <div class="container">
 
-                    <span class="cross-vertical"></span>
+                <div class="section-heading reveal">
 
-                    <span class="cross-horizontal"></span>
+                    <p class="eyebrow">
+                        LET'S HAVE FUN
+                    </p>
+
+                    <h2>
+                        Games & Activities
+                    </h2>
+
+                    <p>
+                        Beberapa hal yang perlu diperhatikan
+                        untuk membuat hari ini semakin menyenangkan.
+                    </p>
 
                 </div>
 
 
-                <div class="cross-flowers">
+                <div class="activity-list">
+
+                    <div class="activity-card reveal">
+
+                        <div class="activity-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Dress Code
+                            </h3>
+
+                            <p>
+                                Mohon mengenakan pakaian yang sopan
+                                dan nyaman untuk mengikuti seluruh
+                                rangkaian kegiatan. Jika memungkinkan,
+                                kami sangat menyarankan menggunakan
+                                pakaian berwarna putih.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-card reveal">
+
+                        <div class="activity-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Food
+                            </h3>
+
+                            <p>
+                                Beberapa hidangan sudah kami persiapkan.
+                                Untuk hidangan lainnya, Bapak/Ibu dan
+                                Saudara/i dapat memilih sesuai dengan
+                                selera, kemudian akan kami persiapkan
+                                sesuai pilihan tersebut.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-card reveal">
+
+                        <div class="activity-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Spare Clothes
+                            </h3>
+
+                            <p>
+                                Jangan lupa membawa pakaian cadangan
+                                untuk anak-anak maupun orang tua,
+                                karena akan ada berbagai aktivitas
+                                dan permainan yang seru.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- RSVP -->
+        <!-- ========================================= -->
+
+        <section class="section rsvp-section">
+
+            <div class="container reveal">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        RSVP
+                    </p>
+
+                    <h2>
+                        Will You Join Us?
+                    </h2>
+
+                    <p>
+                        Mohon konfirmasi kehadiran Anda
+                        agar kami dapat mempersiapkan
+                        acara dengan baik.
+                    </p>
+
+                </div>
+
+
+                <form id="rsvpForm" class="rsvp-form">
+
+                    <div class="form-group">
+
+                        <label for="guestName">
+                            Nama
+                        </label>
+
+                        <input
+                            type="text"
+                            id="guestName"
+                            placeholder="Nama Anda"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Kehadiran
+                        </label>
+
+                        <div class="attendance-options">
+
+                            <label class="attendance-option">
+
+                                <input
+                                    type="radio"
+                                    name="attendance"
+                                    value="Hadir"
+                                    checked
+                                >
+
+                                <span>
+                                    Hadir
+                                </span>
+
+                            </label>
+
+
+                            <label class="attendance-option">
+
+                                <input
+                                    type="radio"
+                                    name="attendance"
+                                    value="Tidak Hadir"
+                                >
+
+                                <span>
+                                    Tidak Hadir
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="guestCount">
+                            Jumlah Orang
+                        </label>
+
+                        <div class="guest-counter">
+
+                            <button
+                                type="button"
+                                id="minusGuest"
+                            >
+                                −
+                            </button>
+
+                            <span id="guestCount">
+                                1
+                            </span>
+
+                            <button
+                                type="button"
+                                id="plusGuest"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Doa / Pesan
+                        </label>
+
+                        <textarea
+                            id="message"
+                            rows="4"
+                            placeholder="Tuliskan doa atau pesan untuk Delia..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+                        KIRIM KONFIRMASI
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- CLOSING -->
+        <!-- ========================================= -->
+
+        <section class="section closing-section">
+
+            <div class="container">
+
+                <div class="decorative-flowers reveal">
                     ✿ ❀ ✿
                 </div>
 
 
+                <div class="closing-message reveal">
+
+                    <p>
+                        “Terima kasih atas doa, kasih, dan
+                        kehadiran Bapak/Ibu, Saudara/i,
+                        serta sahabat sekalian.”
+                    </p>
+
+                    <span>
+                        Kehadiran Anda adalah sukacita bagi kami.
+                    </span>
+
+                </div>
+
+
+                <!-- JUDUL CLOSING -->
+                <!-- Dibuat rapat seperti cover -->
+
+                <div class="closing-title reveal">
+
+                    <span>
+                        Delia's
+                    </span>
+
+                    <strong>
+                        Beach Party
+                    </strong>
+
+                </div>
+
+
+                <div class="decorative-flowers reveal">
+                    ✿ ❀ ✿
+                </div>
+
+
+                <div class="closing-name reveal">
+
+                    <p>
+                        Maria Delia Bedu
+                    </p>
+
+                    <span>
+                        With Love ♡
+                    </span>
+
+                </div>
+
             </div>
-
-
-            <p class="closing-text">
-
-                “Terima kasih atas doa, kasih,
-                dan kehadiran Bapak/Ibu, Saudara/i,
-                serta sahabat sekalian.”
-
-            </p>
-
-
-            <p class="closing-small">
-
-                Kehadiran Anda adalah sukacita
-                bagi kami.
-
-            </p>
-
-
-            <h2 class="closing-title">
-
-                Delia's
-                <span>Beach Party</span>
-
-            </h2>
-
-
-            <div class="closing-flower">
-                ✿ ❀ ✿
-            </div>
-
 
         </section>
-
 
     </main>
 
 
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        Maria Delia Bedu
-
-        <span>
-            With Love ♡
-        </span>
-
-    </footer>
-
-
-
-    <!-- JAVASCRIPT -->
-
     <script src="script.js"></script>
 
-
 </body>
-
 </html>
