@@ -1,5 +1,5 @@
 /* =========================================
-   GLOBAL
+   RESET
 ========================================= */
 
 * {
@@ -8,9 +8,11 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     background: #fff8fa;
@@ -19,36 +21,45 @@ body {
     overflow-x: hidden;
 }
 
+
 img {
     width: 100%;
     display: block;
     object-fit: cover;
 }
 
+
 button,
-a {
+input,
+textarea {
     font-family: inherit;
 }
 
+
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 
+
 /* =========================================
-   COLOR SYSTEM
+   COLORS
 ========================================= */
 
 :root {
 
     --pink-light: #fff1f5;
+
     --pink-soft: #f9dce5;
+
     --pink-medium: #e8b8c7;
+
     --pink-dark: #b77b8d;
 
     --cream: #fffaf8;
 
     --brown: #634d55;
+
     --brown-light: #92737d;
 
     --white: #ffffff;
@@ -56,74 +67,114 @@ a {
 }
 
 
+
 /* =========================================
-   GENERAL SECTIONS
+   GENERAL
 ========================================= */
 
 .section {
+
     position: relative;
+
     width: 100%;
-    max-width: 720px;
+
+    max-width: 760px;
+
     margin: 0 auto;
+
     padding: 90px 24px;
+
     overflow: hidden;
+
 }
 
+
 .eyebrow {
+
     font-size: 10px;
+
     letter-spacing: 3px;
+
     color: var(--pink-dark);
+
     font-weight: 600;
+
     margin-bottom: 18px;
+
 }
+
 
 h1,
 h2,
 h3 {
+
     font-family: "Cormorant Garamond", serif;
+
     font-weight: 500;
+
 }
+
 
 h2 {
+
     font-size: clamp(42px, 10vw, 68px);
+
     line-height: 0.95;
+
     color: var(--brown);
+
 }
+
 
 h2 span {
+
+    display: block;
+
     color: var(--pink-dark);
+
     font-style: italic;
+
 }
 
+
 p {
+
     line-height: 1.9;
+
 }
+
 
 
 /* =========================================
-   OPENING SCREEN
+   OPENING
 ========================================= */
 
 .opening-screen {
+
     min-height: 100svh;
+
     min-height: 100vh;
 
     position: relative;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
 
-    padding: 45px 20px;
+    padding: 35px 20px;
 
     background:
+
         radial-gradient(
-            circle at 50% 25%,
+            circle at 50% 30%,
             rgba(255,255,255,0.95),
-            transparent 35%
+            transparent 38%
         ),
+
         linear-gradient(
             135deg,
             #fff8fa 0%,
@@ -132,56 +183,95 @@ p {
         );
 
     overflow: hidden;
+
 }
 
 
 .opening-content {
+
     position: relative;
+
     z-index: 5;
+
     width: 100%;
+
     max-width: 430px;
+
 }
 
 
-.small-script {
+.opening-subtitle {
+
     font-family: "Cormorant Garamond", serif;
-    font-style: italic;
+
     font-size: 21px;
+
+    font-style: italic;
+
     color: var(--pink-dark);
-    margin-bottom: 22px;
+
+    margin-bottom: 20px;
+
 }
 
 
-.opening-small {
-    margin-top: 25px;
+.invited-text {
+
+    margin-top: 24px;
 
     font-size: 9px;
+
     letter-spacing: 3px;
+
     font-weight: 600;
 
     color: var(--brown-light);
+
 }
 
 
 .opening-screen h1 {
-    font-size: clamp(54px, 15vw, 86px);
-    line-height: 0.82;
+
+    margin-top: 10px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(58px, 16vw, 90px);
+
+    line-height: 0.78;
 
     color: var(--brown);
 
-    margin-top: 13px;
 }
 
 
-.cover-photo-frame {
-    width: min(70vw, 280px);
+.opening-screen h1 span {
+
+    display: block;
+
+    color: var(--pink-dark);
+
+    font-style: italic;
+
+}
+
+
+
+/* =========================================
+   COVER PHOTO
+========================================= */
+
+.cover-frame {
+
+    width: min(68vw, 275px);
+
     aspect-ratio: 3 / 4;
 
     margin: 0 auto;
 
     padding: 8px;
 
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.8);
 
     border: 1px solid rgba(183,123,141,0.35);
 
@@ -189,73 +279,169 @@ p {
         0 20px 50px rgba(130,80,95,0.15);
 
     transform: rotate(-2deg);
+
 }
 
 
 .cover-photo {
+
     width: 100%;
+
     height: 100%;
+
     overflow: hidden;
+
 }
 
 
 .cover-photo img {
+
     height: 100%;
+
 }
+
+
+
+/* =========================================
+   FLOWER ORNAMENTS
+========================================= */
+
+.opening-flower {
+
+    position: absolute;
+
+    z-index: 1;
+
+    color: rgba(183,123,141,0.25);
+
+    pointer-events: none;
+
+}
+
+
+.flower-top-left {
+
+    top: -10px;
+
+    left: -12px;
+
+    font-size: 95px;
+
+    transform: rotate(-20deg);
+
+}
+
+
+.flower-top-right {
+
+    top: -10px;
+
+    right: -12px;
+
+    font-size: 75px;
+
+    transform: rotate(20deg);
+
+}
+
+
+.flower-bottom-left {
+
+    bottom: -15px;
+
+    left: -12px;
+
+    font-size: 75px;
+
+    transform: rotate(20deg);
+
+}
+
+
+.flower-bottom-right {
+
+    bottom: -15px;
+
+    right: -12px;
+
+    font-size: 100px;
+
+    transform: rotate(-20deg);
+
+}
+
 
 
 /* =========================================
    CROSS
 ========================================= */
 
-.cross-decoration {
-    margin: 25px auto 25px;
+.cross-area {
+
+    margin: 24px auto 24px;
+
 }
 
+
 .cross {
+
     position: relative;
 
-    width: 20px;
-    height: 32px;
+    width: 23px;
+
+    height: 36px;
 
     margin: 0 auto;
 
-    opacity: 0.8;
 }
 
-.cross span:first-child {
+
+.cross-vertical {
+
     position: absolute;
 
     width: 6px;
-    height: 32px;
+
+    height: 36px;
 
     background: var(--pink-dark);
 
-    left: 7px;
+    left: 8px;
+
     top: 0;
+
 }
 
-.cross span:last-child {
+
+.cross-horizontal {
+
     position: absolute;
 
-    width: 20px;
+    width: 23px;
+
     height: 6px;
 
     background: var(--pink-dark);
 
     left: 0;
-    top: 8px;
+
+    top: 9px;
+
 }
 
 
 .cross-flowers {
+
+    margin-top: 5px;
+
     color: var(--pink-dark);
 
     font-size: 14px;
+
     letter-spacing: 4px;
 
-    margin-top: 4px;
 }
+
 
 
 /* =========================================
@@ -263,111 +449,56 @@ p {
 ========================================= */
 
 .open-button {
-    border: none;
 
-    padding: 15px 28px;
+    border: 1px solid rgba(183,123,141,0.4);
 
-    background: rgba(255,255,255,0.75);
+    padding: 15px 27px;
+
+    background: rgba(255,255,255,0.78);
 
     color: var(--brown);
-
-    border: 1px solid rgba(183,123,141,0.45);
 
     border-radius: 50px;
 
     cursor: pointer;
 
-    font-size: 10px;
-    letter-spacing: 2.5px;
-    font-weight: 600;
+    font-size: 9px;
 
-    transition: all 0.3s ease;
+    letter-spacing: 2.5px;
+
+    font-weight: 600;
 
     box-shadow:
         0 10px 30px rgba(120,80,90,0.1);
+
+    transition: 0.3s;
+
 }
 
 
 .open-button:hover {
+
     transform: translateY(-3px);
-    background: var(--white);
+
+    background: white;
+
 }
 
 
-.button-arrow {
-    margin-left: 10px;
+.open-button .arrow {
+
+    margin-left: 9px;
+
 }
 
-
-/* =========================================
-   OPENING FLOWERS
-========================================= */
-
-.opening-flower {
-    position: absolute;
-
-    color: rgba(183,123,141,0.25);
-
-    font-size: 80px;
-
-    pointer-events: none;
-}
-
-.flower-one {
-    top: -12px;
-    left: -12px;
-    transform: rotate(-20deg);
-}
-
-.flower-two {
-    bottom: -15px;
-    right: -10px;
-    transform: rotate(20deg);
-}
-
-
-/* =========================================
-   PAGE CORNER DECORATIONS
-========================================= */
-
-.page-decoration {
-    position: fixed;
-
-    z-index: 20;
-
-    color: rgba(183,123,141,0.20);
-
-    font-size: 65px;
-
-    pointer-events: none;
-}
-
-.decoration-top-left {
-    top: -15px;
-    left: -15px;
-}
-
-.decoration-top-right {
-    top: -15px;
-    right: -15px;
-}
-
-.decoration-bottom-left {
-    bottom: -15px;
-    left: -15px;
-}
-
-.decoration-bottom-right {
-    bottom: -15px;
-    right: -15px;
-}
 
 
 /* =========================================
    HERO
 ========================================= */
 
-.hero {
+.hero-section {
+
     text-align: center;
 
     background:
@@ -376,15 +507,41 @@ p {
             #fff8fa,
             #fff1f5
         );
+
 }
 
 
-.hero h2 {
-    margin-bottom: 25px;
+.corner-flower {
+
+    position: absolute;
+
+    color: rgba(183,123,141,0.16);
+
+    font-size: 75px;
+
+}
+
+
+.corner-flower.left {
+
+    top: -10px;
+
+    left: -15px;
+
+}
+
+
+.corner-flower.right {
+
+    top: -10px;
+
+    right: -15px;
+
 }
 
 
 .intro-text {
+
     max-width: 570px;
 
     margin: 0 auto;
@@ -392,7 +549,9 @@ p {
     font-size: 14px;
 
     color: var(--brown-light);
+
 }
+
 
 
 /* =========================================
@@ -409,21 +568,23 @@ p {
 
     gap: 10px;
 
-    color: var(--pink-dark);
-
     margin: 25px 0;
 
-    font-size: 15px;
+    color: var(--pink-dark);
+
 }
 
+
 .floral-divider span {
-    display: block;
 
     width: 45px;
+
     height: 1px;
 
     background: var(--pink-medium);
+
 }
+
 
 
 /* =========================================
@@ -431,14 +592,15 @@ p {
 ========================================= */
 
 .verse-section {
+
     background: var(--cream);
 
     text-align: center;
+
 }
 
 
 .verse-card {
-    position: relative;
 
     padding: 50px 25px;
 
@@ -448,30 +610,38 @@ p {
 
     box-shadow:
         0 15px 45px rgba(120,80,90,0.07);
+
 }
 
 
 .verse-flower {
+
+    font-size: 26px;
+
     color: var(--pink-dark);
 
-    font-size: 25px;
-
     margin-bottom: 15px;
+
 }
 
 
 .verse-label {
+
     font-size: 9px;
+
     letter-spacing: 3px;
-    font-weight: 600;
 
     color: var(--pink-dark);
 
+    font-weight: 600;
+
     margin-bottom: 22px;
+
 }
 
 
 blockquote {
+
     font-family: "Cormorant Garamond", serif;
 
     font-size: clamp(25px, 6vw, 36px);
@@ -479,10 +649,12 @@ blockquote {
     line-height: 1.25;
 
     color: var(--brown);
+
 }
 
 
 .verse-reference {
+
     margin-top: 25px;
 
     font-size: 11px;
@@ -492,7 +664,9 @@ blockquote {
     color: var(--pink-dark);
 
     font-weight: 600;
+
 }
+
 
 
 /* =========================================
@@ -500,9 +674,11 @@ blockquote {
 ========================================= */
 
 .about-section {
+
     text-align: center;
 
     background: #fff8fa;
+
 }
 
 
@@ -518,17 +694,20 @@ blockquote {
 
     border: 1px solid var(--pink-medium);
 
-    transform: rotate(2deg);
-
     background: white;
+
+    transform: rotate(2deg);
 
     box-shadow:
         0 20px 50px rgba(120,80,90,0.10);
+
 }
 
 
 .portrait-frame img {
+
     height: 100%;
+
 }
 
 
@@ -541,12 +720,16 @@ blockquote {
     color: var(--brown-light);
 
     font-size: 14px;
+
 }
 
 
 .about-text p + p {
+
     margin-top: 18px;
+
 }
+
 
 
 /* =========================================
@@ -554,13 +737,16 @@ blockquote {
 ========================================= */
 
 .gallery-section {
+
     background: var(--pink-light);
 
     text-align: center;
+
 }
 
 
 .gallery-intro {
+
     max-width: 500px;
 
     margin: 25px auto 40px;
@@ -568,6 +754,7 @@ blockquote {
     font-size: 13px;
 
     color: var(--brown-light);
+
 }
 
 
@@ -577,15 +764,17 @@ blockquote {
 
     grid-template-columns: repeat(2, 1fr);
 
-    gap: 10px;
+    gap: 11px;
 
-    max-width: 600px;
+    max-width: 620px;
 
     margin: auto;
+
 }
 
 
 .gallery-item {
+
     overflow: hidden;
 
     background: white;
@@ -594,42 +783,73 @@ blockquote {
 
     box-shadow:
         0 10px 25px rgba(120,80,90,0.08);
+
 }
 
 
 .gallery-item img {
+
     height: 100%;
+
     min-height: 160px;
 
     transition: transform 0.5s ease;
+
 }
 
 
 .gallery-item:hover img {
+
     transform: scale(1.05);
+
 }
 
 
 .gallery-large {
+
     grid-column: span 2;
+
     height: 310px;
+
 }
 
 
 .gallery-wide {
+
     grid-column: span 2;
+
     height: 220px;
+
 }
 
 
 .gallery-small {
-    height: 240px;
+
+    height: 235px;
+
 }
 
 
 .gallery-tall {
+
     height: 310px;
+
 }
+
+
+.rotate-left {
+
+    transform: rotate(-1.5deg);
+
+}
+
+
+.rotate-right {
+
+    transform: rotate(1.5deg);
+
+}
+
 
 
 /* =========================================
@@ -646,19 +866,23 @@ blockquote {
             #f8dce5,
             #fff0f4
         );
+
 }
 
 
 .countdown-decoration {
+
     font-size: 35px;
 
     color: var(--pink-dark);
 
     margin-bottom: 10px;
+
 }
 
 
 .countdown {
+
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
@@ -668,6 +892,7 @@ blockquote {
     margin: 40px auto 25px;
 
     max-width: 600px;
+
 }
 
 
@@ -678,6 +903,7 @@ blockquote {
     background: rgba(255,255,255,0.65);
 
     border: 1px solid rgba(183,123,141,0.25);
+
 }
 
 
@@ -690,6 +916,7 @@ blockquote {
     font-size: clamp(30px, 8vw, 48px);
 
     color: var(--brown);
+
 }
 
 
@@ -706,6 +933,7 @@ blockquote {
     color: var(--pink-dark);
 
     text-transform: uppercase;
+
 }
 
 
@@ -716,20 +944,26 @@ blockquote {
     letter-spacing: 2px;
 
     color: var(--brown-light);
+
 }
 
 
+
 /* =========================================
-   DETAILS
+   EVENT DETAILS
 ========================================= */
 
 .details-section {
+
     background: #fffaf8;
+
 }
 
 
 .detail-list {
+
     margin-top: 40px;
+
 }
 
 
@@ -742,6 +976,7 @@ blockquote {
     padding: 25px 0;
 
     border-bottom: 1px solid rgba(183,123,141,0.18);
+
 }
 
 
@@ -750,6 +985,7 @@ blockquote {
     flex-shrink: 0;
 
     width: 45px;
+
     height: 45px;
 
     border-radius: 50%;
@@ -757,6 +993,7 @@ blockquote {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     background: var(--pink-light);
@@ -764,6 +1001,7 @@ blockquote {
     color: var(--pink-dark);
 
     font-size: 20px;
+
 }
 
 
@@ -778,6 +1016,7 @@ blockquote {
     color: var(--pink-dark);
 
     margin-bottom: 6px;
+
 }
 
 
@@ -788,6 +1027,7 @@ blockquote {
     color: var(--brown);
 
     line-height: 1.1;
+
 }
 
 
@@ -800,8 +1040,14 @@ blockquote {
     margin-top: 8px;
 
     line-height: 1.7;
+
 }
 
+
+
+/* =========================================
+   GOOGLE MAPS
+========================================= */
 
 .maps-button {
 
@@ -830,6 +1076,7 @@ blockquote {
     font-weight: 600;
 
     transition: 0.3s;
+
 }
 
 
@@ -839,11 +1086,13 @@ blockquote {
 
     box-shadow:
         0 10px 25px rgba(183,123,141,0.25);
+
 }
 
 
+
 /* =========================================
-   FUN SECTION
+   FUN / LOMBA
 ========================================= */
 
 .fun-section {
@@ -851,6 +1100,7 @@ blockquote {
     background: var(--pink-light);
 
     text-align: center;
+
 }
 
 
@@ -861,6 +1111,7 @@ blockquote {
     background: rgba(255,255,255,0.7);
 
     border: 1px solid rgba(183,123,141,0.18);
+
 }
 
 
@@ -871,18 +1122,20 @@ blockquote {
     color: var(--pink-dark);
 
     margin-bottom: 15px;
+
 }
 
 
 .fun-card > p {
 
-    margin: 25px auto;
-
     max-width: 500px;
+
+    margin: 25px auto;
 
     color: var(--brown-light);
 
     font-size: 13px;
+
 }
 
 
@@ -899,6 +1152,7 @@ blockquote {
     background: #fff5f7;
 
     border-left: 3px solid var(--pink-dark);
+
 }
 
 
@@ -907,6 +1161,7 @@ blockquote {
     font-size: 25px;
 
     color: var(--pink-dark);
+
 }
 
 
@@ -919,6 +1174,7 @@ blockquote {
     font-size: 22px;
 
     color: var(--brown);
+
 }
 
 
@@ -931,7 +1187,9 @@ blockquote {
     line-height: 1.7;
 
     margin-top: 5px;
+
 }
+
 
 
 /* =========================================
@@ -940,9 +1198,10 @@ blockquote {
 
 .rsvp-section {
 
+    background: #fffaf8;
+
     text-align: center;
 
-    background: #fffaf8;
 }
 
 
@@ -955,32 +1214,321 @@ blockquote {
     font-size: 13px;
 
     color: var(--brown-light);
+
 }
 
 
-.rsvp-buttons {
+.rsvp-form {
+
+    max-width: 520px;
+
+    margin: 35px auto 0;
+
+    text-align: left;
+
+}
+
+
+.form-group {
+
+    margin-bottom: 28px;
+
+}
+
+
+.form-group > label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 600;
+
+    color: var(--brown);
+
+}
+
+
+.form-group input[type="text"],
+.form-group textarea {
+
+    width: 100%;
+
+    border: 1px solid rgba(183,123,141,0.3);
+
+    background: rgba(255,255,255,0.8);
+
+    border-radius: 12px;
+
+    padding: 15px 16px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    color: var(--brown);
+
+    outline: none;
+
+    transition: 0.3s;
+
+    resize: vertical;
+
+}
+
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+
+    border-color: var(--pink-dark);
+
+    box-shadow:
+        0 0 0 3px rgba(183,123,141,0.08);
+
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+
+    color: #b8a5aa;
+
+}
+
+
+
+/* =========================================
+   ATTENDANCE
+========================================= */
+
+.attendance-options {
 
     display: flex;
 
     flex-direction: column;
 
-    gap: 12px;
+    gap: 10px;
 
-    max-width: 430px;
-
-    margin: auto;
 }
 
 
-.rsvp-button {
+.attendance-option {
 
-    display: block;
+    position: relative;
 
-    padding: 17px 20px;
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    margin: 0 !important;
+
+    border: 1px solid rgba(183,123,141,0.2);
+
+    background: rgba(255,255,255,0.65);
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 11px !important;
+
+    letter-spacing: 0 !important;
+
+    font-weight: 400 !important;
+
+    transition: 0.3s;
+
+}
+
+
+.attendance-option:hover {
+
+    background: #fff;
+
+    border-color: var(--pink-medium);
+
+}
+
+
+.attendance-option input {
+
+    position: absolute;
+
+    opacity: 0;
+
+}
+
+
+.custom-radio {
+
+    width: 19px;
+
+    height: 19px;
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--pink-medium);
+
+    border-radius: 50%;
+
+    position: relative;
+
+}
+
+
+.attendance-option input:checked + .custom-radio {
+
+    border-color: var(--pink-dark);
+
+    background: var(--pink-dark);
+
+}
+
+
+.attendance-option input:checked + .custom-radio::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+
+    height: 7px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    left: 5px;
+
+    top: 5px;
+
+}
+
+
+
+/* =========================================
+   COUNTER
+========================================= */
+
+.guest-counter {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    width: 170px;
+
+    margin: 0 auto;
+
+    padding: 8px;
+
+    background: rgba(255,255,255,0.7);
+
+    border: 1px solid rgba(183,123,141,0.25);
 
     border-radius: 50px;
 
-    text-decoration: none;
+}
+
+
+.counter-button {
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--pink-light);
+
+    color: var(--pink-dark);
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.counter-button:hover {
+
+    background: var(--pink-soft);
+
+}
+
+
+.counter-button:disabled {
+
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+}
+
+
+#guestCount {
+
+    min-width: 25px;
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    color: var(--brown);
+
+}
+
+
+.counter-note {
+
+    text-align: center;
+
+    margin-top: 8px;
+
+    font-size: 9px;
+
+    color: var(--brown-light);
+
+}
+
+
+
+/* =========================================
+   RSVP BUTTON
+========================================= */
+
+.rsvp-submit {
+
+    width: 100%;
+
+    padding: 17px 20px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: var(--pink-dark);
+
+    color: white;
 
     font-size: 9px;
 
@@ -988,32 +1536,169 @@ blockquote {
 
     font-weight: 600;
 
+    cursor: pointer;
+
     transition: 0.3s;
+
+    box-shadow:
+        0 10px 25px rgba(183,123,141,0.18);
+
 }
 
 
-.rsvp-button:hover {
+.rsvp-submit:hover {
 
     transform: translateY(-3px);
+
 }
 
 
-.rsvp-button.primary {
+.rsvp-submit span {
+
+    margin-left: 8px;
+
+    font-size: 13px;
+
+}
+
+
+
+/* =========================================
+   SUCCESS RSVP
+========================================= */
+
+.rsvp-success {
+
+    max-width: 520px;
+
+    margin: 35px auto 0;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    background: #fff5f7;
+
+    border: 1px solid rgba(183,123,141,0.2);
+
+    animation: fadeUp 0.7s ease both;
+
+}
+
+
+.success-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
 
     background: var(--pink-dark);
 
     color: white;
+
+    font-size: 25px;
+
 }
 
 
-.rsvp-button.secondary {
+.rsvp-success h3 {
 
-    border: 1px solid var(--pink-medium);
+    font-size: 32px;
 
     color: var(--brown);
 
-    background: white;
+    margin-bottom: 10px;
+
 }
+
+
+.rsvp-success p {
+
+    font-size: 12px;
+
+    color: var(--brown-light);
+
+    margin-bottom: 12px;
+
+}
+
+
+.rsvp-success span {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    color: var(--pink-dark);
+
+    font-style: italic;
+
+}
+
+
+
+/* =========================================
+   MUSIC BUTTON
+========================================= */
+
+.music-button {
+
+    position: fixed;
+
+    right: 18px;
+
+    bottom: 18px;
+
+    z-index: 100;
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(183,123,141,0.35);
+
+    background: rgba(255,255,255,0.9);
+
+    color: var(--pink-dark);
+
+    font-size: 19px;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(100,70,80,0.12);
+
+    backdrop-filter: blur(8px);
+
+}
+
+
+.music-button.active {
+
+    display: flex;
+
+    animation: musicPulse 2s infinite;
+
+}
+
 
 
 /* =========================================
@@ -1030,12 +1715,14 @@ blockquote {
             #fff1f5,
             #f9dce5
         );
+
 }
 
 
 .closing-cross {
 
     margin-bottom: 35px;
+
 }
 
 
@@ -1052,6 +1739,7 @@ blockquote {
     line-height: 1.3;
 
     color: var(--brown);
+
 }
 
 
@@ -1064,6 +1752,7 @@ blockquote {
     letter-spacing: 1px;
 
     color: var(--brown-light);
+
 }
 
 
@@ -1072,6 +1761,7 @@ blockquote {
     margin-top: 35px;
 
     font-size: 40px;
+
 }
 
 
@@ -1082,7 +1772,9 @@ blockquote {
     font-size: 28px;
 
     color: var(--pink-dark);
+
 }
+
 
 
 /* =========================================
@@ -1102,6 +1794,7 @@ footer {
     font-size: 9px;
 
     letter-spacing: 1px;
+
 }
 
 
@@ -1114,7 +1807,9 @@ footer span {
     margin-top: 5px;
 
     font-size: 16px;
+
 }
+
 
 
 /* =========================================
@@ -1142,35 +1837,31 @@ footer span {
 }
 
 
-.opening-content > * {
+@keyframes musicPulse {
 
-    animation: fadeUp 1s ease both;
+    0% {
+
+        box-shadow:
+            0 0 0 0 rgba(183,123,141,0.25);
+
+    }
+
+    70% {
+
+        box-shadow:
+            0 0 0 10px rgba(183,123,141,0);
+
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 0 0 rgba(183,123,141,0);
+
+    }
+
 }
 
-
-.opening-content > *:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.opening-content > *:nth-child(2) {
-    animation-delay: 0.25s;
-}
-
-.opening-content > *:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-.opening-content > *:nth-child(4) {
-    animation-delay: 0.5s;
-}
-
-.opening-content > *:nth-child(5) {
-    animation-delay: 0.6s;
-}
-
-.opening-content > *:nth-child(6) {
-    animation-delay: 0.75s;
-}
 
 
 /* =========================================
@@ -1180,76 +1871,81 @@ footer span {
 @media (min-width: 768px) {
 
     .section {
+
         padding: 110px 40px;
-    }
 
-
-    .gallery {
-        gap: 15px;
-    }
-
-
-    .gallery-item {
-        padding: 7px;
     }
 
 
     .rsvp-buttons {
+
         flex-direction: row;
-        max-width: 600px;
-    }
 
-
-    .rsvp-button {
-        flex: 1;
     }
 
 }
 
 
+
 /* =========================================
-   SMALL PHONES
+   SMALL PHONE
 ========================================= */
 
 @media (max-width: 360px) {
 
     .opening-screen {
-        padding: 30px 15px;
+
+        padding: 25px 15px;
+
     }
 
 
-    .cover-photo-frame {
+    .cover-frame {
+
         width: 210px;
+
     }
 
 
     .opening-screen h1 {
+
         font-size: 50px;
+
     }
 
 
     .section {
+
         padding: 75px 18px;
+
     }
 
 
     .countdown {
+
         gap: 5px;
+
     }
 
 
     .count-box {
+
         padding: 15px 3px;
+
     }
 
 
     .count-box span {
+
         font-size: 28px;
+
     }
 
 
     .count-box small {
+
         font-size: 7px;
+
     }
 
 }
