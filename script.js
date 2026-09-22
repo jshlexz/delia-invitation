@@ -1,459 +1,162 @@
-/* =========================================
-   OPEN INVITATION
-========================================= */
+/* ==================================================
+   DELIA'S BEACH PARTY
+   JAVASCRIPT
+================================================== */
 
-const openButton =
-    document.getElementById("openInvitation");
 
-const openingScreen =
-    document.getElementById("openingScreen");
+document.addEventListener("DOMContentLoaded", function () {
 
-const invitation =
-    document.getElementById("invitation");
 
-const backgroundMusic =
-    document.getElementById("backgroundMusic");
+    /* ==================================================
+       ELEMENTS
+    ================================================== */
 
-const musicButton =
-    document.getElementById("musicButton");
+    const openingScreen =
+        document.getElementById("openingScreen");
 
-const musicIcon =
-    document.getElementById("musicIcon");
+    const openInvitation =
+        document.getElementById("openInvitation");
 
+    const invitation =
+        document.getElementById("invitation");
 
+    const backgroundMusic =
+        document.getElementById("backgroundMusic");
 
-/* =========================================
-   OPEN INVITATION + START MUSIC
-========================================= */
+    const musicButton =
+        document.getElementById("musicButton");
 
-openButton.addEventListener(
-    "click",
-    async function () {
+    const musicIcon =
+        document.getElementById("musicIcon");
 
 
-        /*
-            Musik dimulai setelah pengunjung
-            menekan OPEN INVITATION.
-        */
+    /* ==================================================
+       OPEN INVITATION
+    ================================================== */
 
-        try {
+    if (openInvitation) {
 
-            await backgroundMusic.play();
-
-            musicButton.classList.add("active");
-
-            musicIcon.innerText = "♫";
-
-        }
-
-        catch (error) {
-
-            console.log(
-                "Musik belum dapat diputar:",
-                error
-            );
-
-        }
-
-
-        /*
-            Animasi membuka undangan
-        */
-
-        openingScreen.style.transition =
-            "opacity 0.8s ease, transform 0.8s ease";
-
-        openingScreen.style.opacity = "0";
-
-        openingScreen.style.transform =
-            "scale(1.03)";
-
-
-        setTimeout(function () {
-
-            openingScreen.style.display =
-                "none";
-
-            invitation.classList.remove(
-                "hidden"
-            );
-
-            window.scrollTo(
-                0,
-                0
-            );
-
-        }, 800);
-
-    }
-);
-
-
-
-/* =========================================
-   MUSIC PLAY / PAUSE
-========================================= */
-
-musicButton.addEventListener(
-    "click",
-    function () {
-
-
-        if (
-            backgroundMusic.paused
-        ) {
-
-            backgroundMusic.play();
-
-            musicIcon.innerText =
-                "♫";
-
-        }
-
-        else {
-
-            backgroundMusic.pause();
-
-            musicIcon.innerText =
-                "▶";
-
-        }
-
-    }
-);
-
-
-
-/* =========================================
-   COUNTDOWN
-========================================= */
-
-/*
-    Acara:
-
-    Sabtu
-    26 September 2026
-    10.00 WITA
-
-    WITA = UTC+8
-*/
-
-const eventDate =
-    new Date(
-        "2026-09-26T10:00:00+08:00"
-    ).getTime();
-
-
-
-function updateCountdown() {
-
-
-    const now =
-        new Date().getTime();
-
-
-    const distance =
-        eventDate - now;
-
-
-
-    /*
-        Kalau acara sudah dimulai
-    */
-
-    if (
-        distance <= 0
-    ) {
-
-        document.getElementById(
-            "days"
-        ).innerText = "00";
-
-
-        document.getElementById(
-            "hours"
-        ).innerText = "00";
-
-
-        document.getElementById(
-            "minutes"
-        ).innerText = "00";
-
-
-        document.getElementById(
-            "seconds"
-        ).innerText = "00";
-
-
-        return;
-
-    }
-
-
-
-    const days =
-        Math.floor(
-            distance /
-            (1000 * 60 * 60 * 24)
-        );
-
-
-    const hours =
-        Math.floor(
-            (
-                distance %
-                (1000 * 60 * 60 * 24)
-            )
-            /
-            (1000 * 60 * 60)
-        );
-
-
-    const minutes =
-        Math.floor(
-            (
-                distance %
-                (1000 * 60 * 60)
-            )
-            /
-            (1000 * 60)
-        );
-
-
-    const seconds =
-        Math.floor(
-            (
-                distance %
-                (1000 * 60)
-            )
-            /
-            1000
-        );
-
-
-
-    document.getElementById(
-        "days"
-    ).innerText =
-        String(days).padStart(
-            2,
-            "0"
-        );
-
-
-    document.getElementById(
-        "hours"
-    ).innerText =
-        String(hours).padStart(
-            2,
-            "0"
-        );
-
-
-    document.getElementById(
-        "minutes"
-    ).innerText =
-        String(minutes).padStart(
-            2,
-            "0"
-        );
-
-
-    document.getElementById(
-        "seconds"
-    ).innerText =
-        String(seconds).padStart(
-            2,
-            "0"
-        );
-
-}
-
-
-
-updateCountdown();
-
-
-setInterval(
-    updateCountdown,
-    1000
-);
-
-
-
-/* =========================================
-   RSVP
-========================================= */
-
-const rsvpForm =
-    document.getElementById(
-        "rsvpForm"
-    );
-
-
-const rsvpSuccess =
-    document.getElementById(
-        "rsvpSuccess"
-    );
-
-
-const guestCountElement =
-    document.getElementById(
-        "guestCount"
-    );
-
-
-const guestCountGroup =
-    document.getElementById(
-        "guestCountGroup"
-    );
-
-
-const minusGuest =
-    document.getElementById(
-        "minusGuest"
-    );
-
-
-const plusGuest =
-    document.getElementById(
-        "plusGuest"
-    );
-
-
-let guestCount = 1;
-
-
-
-/* =========================================
-   TAMBAH JUMLAH TAMU
-========================================= */
-
-plusGuest.addEventListener(
-    "click",
-    function () {
-
-
-        /*
-            Maksimal 20 orang
-            untuk satu pengisian.
-        */
-
-        if (
-            guestCount < 20
-        ) {
-
-            guestCount++;
-
-            guestCountElement.innerText =
-                guestCount;
-
-        }
-
-    }
-);
-
-
-
-/* =========================================
-   KURANGI JUMLAH TAMU
-========================================= */
-
-minusGuest.addEventListener(
-    "click",
-    function () {
-
-
-        if (
-            guestCount > 1
-        ) {
-
-            guestCount--;
-
-            guestCountElement.innerText =
-                guestCount;
-
-        }
-
-    }
-);
-
-
-
-/* =========================================
-   PILIH HADIR / TIDAK HADIR
-========================================= */
-
-const attendanceOptions =
-    document.querySelectorAll(
-        'input[name="attendance"]'
-    );
-
-
-attendanceOptions.forEach(
-    function (option) {
-
-
-        option.addEventListener(
-            "change",
+        openInvitation.addEventListener(
+            "click",
             function () {
 
 
                 /*
-                    Jika TIDAK HADIR
-                */
+                 * Musik mulai setelah user
+                 * melakukan klik.
+                 */
 
-                if (
-                    this.value ===
-                    "Tidak Hadir"
-                ) {
+                if (backgroundMusic) {
 
+                    backgroundMusic.volume = 0.45;
 
-                    guestCount = 0;
+                    backgroundMusic
+                        .play()
+                        .then(function () {
 
+                            musicButton.classList.add("playing");
 
-                    guestCountElement.innerText =
-                        "0";
+                            musicIcon.textContent = "♫";
 
+                        })
+                        .catch(function (error) {
 
-                    guestCountGroup.style.opacity =
-                        "0.45";
+                            console.log(
+                                "Musik belum dapat diputar:",
+                                error
+                            );
 
-
-                    minusGuest.disabled =
-                        true;
-
-
-                    plusGuest.disabled =
-                        true;
+                        });
 
                 }
 
 
                 /*
-                    Jika HADIR
-                */
+                 * Tampilkan invitation
+                 */
 
-                else {
-
-
-                    guestCount = 1;
+                invitation.classList.remove("hidden");
 
 
-                    guestCountElement.innerText =
-                        "1";
+                /*
+                 * Hilangkan opening
+                 */
+
+                setTimeout(function () {
+
+                    openingScreen.classList.add("hide");
+
+                }, 100);
 
 
-                    guestCountGroup.style.opacity =
-                        "1";
+                /*
+                 * Scroll ke awal invitation
+                 */
+
+                setTimeout(function () {
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                }, 500);
 
 
-                    minusGuest.disabled =
-                        false;
+            }
+        );
+
+    }
 
 
-                    plusGuest.disabled =
-                        false;
+
+    /* ==================================================
+       MUSIC BUTTON
+    ================================================== */
+
+    if (musicButton) {
+
+        musicButton.addEventListener(
+            "click",
+            function () {
+
+
+                if (!backgroundMusic) {
+                    return;
+                }
+
+
+                if (backgroundMusic.paused) {
+
+
+                    backgroundMusic
+                        .play()
+                        .then(function () {
+
+                            musicButton.classList.add(
+                                "playing"
+                            );
+
+                            musicIcon.textContent = "♫";
+
+                        })
+                        .catch(function (error) {
+
+                            console.log(error);
+
+                        });
+
+
+                } else {
+
+
+                    backgroundMusic.pause();
+
+                    musicButton.classList.remove(
+                        "playing"
+                    );
+
+                    musicIcon.textContent = "♪";
 
                 }
 
@@ -461,122 +164,516 @@ attendanceOptions.forEach(
         );
 
     }
-);
 
 
 
-/* =========================================
-   RSVP SUBMIT
-========================================= */
+    /* ==================================================
+       SCROLL REVEAL
+    ================================================== */
 
-rsvpForm.addEventListener(
-    "submit",
-    function (event) {
-
-
-        /*
-            Mencegah halaman refresh
-        */
-
-        event.preventDefault();
+    const revealElements =
+        document.querySelectorAll(".reveal");
 
 
-
-        const name =
-            document.getElementById(
-                "guestName"
-            ).value.trim();
+    const revealObserver =
+        new IntersectionObserver(
+            function (entries) {
 
 
-
-        const attendance =
-            document.querySelector(
-                'input[name="attendance"]:checked'
-            );
+                entries.forEach(function (entry) {
 
 
+                    if (entry.isIntersecting) {
 
-        /*
-            Pastikan kehadiran dipilih
-        */
 
-        if (
-            !attendance
-        ) {
+                        entry.target.classList.add(
+                            "active"
+                        );
 
-            alert(
-                "Silakan pilih konfirmasi kehadiran."
-            );
+
+                        /*
+                         * Setelah muncul,
+                         * observer tidak perlu
+                         * mengawasi lagi.
+                         */
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach(function (element) {
+
+        revealObserver.observe(element);
+
+    });
+
+
+
+    /* ==================================================
+       GALLERY ANIMATION
+    ================================================== */
+
+    const galleryItems =
+        document.querySelectorAll(
+            ".gallery-item"
+        );
+
+
+    const galleryObserver =
+        new IntersectionObserver(
+            function (entries) {
+
+
+                entries.forEach(function (entry) {
+
+
+                    if (entry.isIntersecting) {
+
+
+                        const item =
+                            entry.target;
+
+
+                        /*
+                         * Tambahkan active
+                         * dengan sedikit delay
+                         * berdasarkan posisi.
+                         */
+
+                        const index =
+                            Array.from(
+                                galleryItems
+                            ).indexOf(item);
+
+
+                        setTimeout(
+                            function () {
+
+                                item.classList.add(
+                                    "active"
+                                );
+
+                            },
+                            index * 120
+                        );
+
+
+                        galleryObserver.unobserve(
+                            item
+                        );
+
+                    }
+
+                });
+
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+    galleryItems.forEach(function (item) {
+
+        galleryObserver.observe(item);
+
+    });
+
+
+
+    /* ==================================================
+       COUNTDOWN
+    ================================================== */
+
+    const targetDate =
+        new Date(
+            "2026-09-26T10:00:00+08:00"
+        ).getTime();
+
+
+    function updateCountdown() {
+
+
+        const now =
+            new Date().getTime();
+
+
+        const distance =
+            targetDate - now;
+
+
+        const days =
+            document.getElementById("days");
+
+        const hours =
+            document.getElementById("hours");
+
+        const minutes =
+            document.getElementById("minutes");
+
+        const seconds =
+            document.getElementById("seconds");
+
+
+        if (distance <= 0) {
+
+
+            days.textContent = "00";
+
+            hours.textContent = "00";
+
+            minutes.textContent = "00";
+
+            seconds.textContent = "00";
 
             return;
 
         }
 
 
-
-        const message =
-            document.getElementById(
-                "message"
-            ).value.trim();
-
-
-
-        /*
-            DATA SEMENTARA
-
-            Nanti pada tahap berikutnya
-            akan kita sambungkan ke
-            Google Sheets.
-
-        */
-
-        console.log({
-
-            nama:
-                name,
-
-            kehadiran:
-                attendance.value,
-
-            jumlah:
-                guestCount,
-
-            ucapan:
-                message
-
-        });
+        const dayValue =
+            Math.floor(
+                distance /
+                (1000 * 60 * 60 * 24)
+            );
 
 
+        const hourValue =
+            Math.floor(
+                (distance %
+                    (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60)
+            );
 
-        /*
-            Tampilkan pesan sukses
-        */
 
-        rsvpForm.style.display =
-            "none";
+        const minuteValue =
+            Math.floor(
+                (distance %
+                    (1000 * 60 * 60)) /
+                (1000 * 60)
+            );
 
 
-        rsvpSuccess.classList.remove(
-            "hidden"
+        const secondValue =
+            Math.floor(
+                (distance %
+                    (1000 * 60)) /
+                1000
+            );
+
+
+        days.textContent =
+            String(dayValue).padStart(2, "0");
+
+
+        hours.textContent =
+            String(hourValue).padStart(2, "0");
+
+
+        minutes.textContent =
+            String(minuteValue).padStart(2, "0");
+
+
+        seconds.textContent =
+            String(secondValue).padStart(2, "0");
+
+    }
+
+
+    updateCountdown();
+
+
+    setInterval(
+        updateCountdown,
+        1000
+    );
+
+
+
+    /* ==================================================
+       RSVP
+    ================================================== */
+
+    const rsvpForm =
+        document.getElementById("rsvpForm");
+
+
+    const guestCount =
+        document.getElementById("guestCount");
+
+
+    const minusGuest =
+        document.getElementById("minusGuest");
+
+
+    const plusGuest =
+        document.getElementById("plusGuest");
+
+
+    const guestCountGroup =
+        document.getElementById(
+            "guestCountGroup"
         );
 
 
+    const rsvpSuccess =
+        document.getElementById(
+            "rsvpSuccess"
+        );
 
-        /*
-            Scroll ke pesan sukses
-        */
 
-        setTimeout(
+    let numberOfGuests = 1;
+
+
+
+    /* ==================================================
+       PLUS GUEST
+    ================================================== */
+
+    if (plusGuest) {
+
+        plusGuest.addEventListener(
+            "click",
             function () {
 
-                rsvpSuccess.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center"
-                });
 
-            },
-            100
+                if (numberOfGuests < 20) {
+
+                    numberOfGuests++;
+
+                    guestCount.textContent =
+                        numberOfGuests;
+
+                }
+
+            }
         );
 
     }
-);
+
+
+
+    /* ==================================================
+       MINUS GUEST
+    ================================================== */
+
+    if (minusGuest) {
+
+        minusGuest.addEventListener(
+            "click",
+            function () {
+
+
+                if (numberOfGuests > 1) {
+
+                    numberOfGuests--;
+
+                    guestCount.textContent =
+                        numberOfGuests;
+
+                }
+
+            }
+        );
+
+    }
+
+
+
+    /* ==================================================
+       ATTENDANCE
+    ================================================== */
+
+    const attendanceInputs =
+        document.querySelectorAll(
+            'input[name="attendance"]'
+        );
+
+
+    attendanceInputs.forEach(
+        function (input) {
+
+
+            input.addEventListener(
+                "change",
+                function () {
+
+
+                    if (
+                        this.value ===
+                        "Tidak Hadir"
+                    ) {
+
+
+                        numberOfGuests = 0;
+
+                        guestCount.textContent =
+                            "0";
+
+
+                        guestCountGroup.style.opacity =
+                            "0.45";
+
+
+                        guestCountGroup.style.pointerEvents =
+                            "none";
+
+
+                    } else {
+
+
+                        numberOfGuests = 1;
+
+                        guestCount.textContent =
+                            "1";
+
+
+                        guestCountGroup.style.opacity =
+                            "1";
+
+
+                        guestCountGroup.style.pointerEvents =
+                            "auto";
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* ==================================================
+       RSVP SUBMIT
+    ================================================== */
+
+    if (rsvpForm) {
+
+        rsvpForm.addEventListener(
+            "submit",
+            function (event) {
+
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById(
+                        "guestName"
+                    ).value.trim();
+
+
+                const attendance =
+                    document.querySelector(
+                        'input[name="attendance"]:checked'
+                    );
+
+
+                const message =
+                    document.getElementById(
+                        "message"
+                    ).value.trim();
+
+
+                if (!attendance) {
+
+                    alert(
+                        "Mohon pilih konfirmasi kehadiran."
+                    );
+
+                    return;
+
+                }
+
+
+                /*
+                 * Data untuk sementara
+                 * ditampilkan di console.
+                 *
+                 * Nanti bisa kita sambungkan
+                 * ke Google Sheets.
+                 */
+
+                const rsvpData = {
+
+                    nama: name,
+
+                    kehadiran:
+                        attendance.value,
+
+                    jumlah:
+                        numberOfGuests,
+
+                    pesan:
+                        message,
+
+                    waktu:
+                        new Date().toLocaleString(
+                            "id-ID"
+                        )
+
+                };
+
+
+                console.log(
+                    "DATA RSVP:",
+                    rsvpData
+                );
+
+
+                /*
+                 * Sembunyikan form
+                 */
+
+                rsvpForm.classList.add(
+                    "hidden"
+                );
+
+
+                /*
+                 * Tampilkan success
+                 */
+
+                rsvpSuccess.classList.remove(
+                    "hidden"
+                );
+
+
+                /*
+                 * Scroll sedikit ke success
+                 */
+
+                setTimeout(
+                    function () {
+
+                        rsvpSuccess.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center"
+                        });
+
+                    },
+                    200
+                );
+
+            }
+        );
+
+    }
+
+
+});
