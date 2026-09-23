@@ -1,326 +1,679 @@
-/* ========================================= */
-/* ELEMENTS */
-/* ========================================= */
-
-const opening = document.getElementById("opening");
-const invitation = document.getElementById("invitation");
-
-const openInvitation = document.getElementById("openInvitation");
-
-const backgroundMusic = document.getElementById("backgroundMusic");
-const musicButton = document.getElementById("musicButton");
+/* ==================================================
+   DELIA'S BEACH PARTY
+   JAVASCRIPT
+================================================== */
 
 
-/* ========================================= */
-/* OPEN INVITATION */
-/* ========================================= */
-
-openInvitation.addEventListener("click", async () => {
-
-    opening.style.transition = "opacity 0.8s ease";
-
-    opening.style.opacity = "0";
-
-    setTimeout(() => {
-
-        opening.style.display = "none";
-
-        invitation.classList.remove("hidden");
-
-        window.scrollTo({
-            top: 0,
-            behavior: "instant"
-        });
-
-    }, 800);
+document.addEventListener("DOMContentLoaded", function () {
 
 
-    try {
+    /* ==================================================
+       ELEMENTS
+    ================================================== */
 
-        await backgroundMusic.play();
+    const openingScreen =
+        document.getElementById("openingScreen");
 
-        musicButton.innerHTML = "♫";
+    const openInvitation =
+        document.getElementById("openInvitation");
 
-    } catch (error) {
+    const invitation =
+        document.getElementById("invitation");
 
-        console.log("Music autoplay tidak dapat dijalankan:", error);
+    const backgroundMusic =
+        document.getElementById("backgroundMusic");
 
-    }
+    const musicButton =
+        document.getElementById("musicButton");
 
-});
-
-
-/* ========================================= */
-/* MUSIC BUTTON */
-/* ========================================= */
-
-musicButton.addEventListener("click", async () => {
-
-    if (backgroundMusic.paused) {
-
-        try {
-
-            await backgroundMusic.play();
-
-            musicButton.innerHTML = "♫";
-
-        } catch (error) {
-
-            console.log("Music gagal diputar:", error);
-
-        }
-
-    } else {
-
-        backgroundMusic.pause();
-
-        musicButton.innerHTML = "♪";
-
-    }
-
-});
+    const musicIcon =
+        document.getElementById("musicIcon");
 
 
-/* ========================================= */
-/* SCROLL REVEAL */
-/* ========================================= */
+    /* ==================================================
+       OPEN INVITATION
+    ================================================== */
 
-const revealElements = document.querySelectorAll(".reveal");
+    if (openInvitation) {
 
-const revealObserver = new IntersectionObserver(
-    (entries) => {
+        openInvitation.addEventListener(
+            "click",
+            function () {
 
-        entries.forEach((entry) => {
 
-            if (entry.isIntersecting) {
+                /*
+                 * Musik mulai setelah user
+                 * melakukan klik.
+                 */
 
-                entry.target.classList.add("active");
+                if (backgroundMusic) {
 
-                revealObserver.unobserve(entry.target);
+                    backgroundMusic.volume = 0.45;
+
+                    backgroundMusic
+                        .play()
+                        .then(function () {
+
+                            musicButton.classList.add("playing");
+
+                            musicIcon.textContent = "♫";
+
+                        })
+                        .catch(function (error) {
+
+                            console.log(
+                                "Musik belum dapat diputar:",
+                                error
+                            );
+
+                        });
+
+                }
+
+
+                /*
+                 * Tampilkan invitation
+                 */
+
+                invitation.classList.remove("hidden");
+
+
+                /*
+                 * Hilangkan opening
+                 */
+
+                setTimeout(function () {
+
+                    openingScreen.classList.add("hide");
+
+                }, 100);
+
+
+                /*
+                 * Scroll ke awal invitation
+                 */
+
+                setTimeout(function () {
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                }, 500);
+
 
             }
-
-        });
-
-    },
-    {
-        threshold: 0.12
-    }
-);
-
-
-revealElements.forEach((element) => {
-
-    revealObserver.observe(element);
-
-});
-
-
-/* ========================================= */
-/* COUNTDOWN */
-/* ========================================= */
-
-const eventDate = new Date(
-    "2026-09-26T10:00:00+08:00"
-).getTime();
-
-
-function updateCountdown() {
-
-    const now = new Date().getTime();
-
-    const difference = eventDate - now;
-
-
-    if (difference <= 0) {
-
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
-
-        return;
+        );
 
     }
 
 
-    const days = Math.floor(
-        difference / (1000 * 60 * 60 * 24)
-    );
 
-    const hours = Math.floor(
-        (difference / (1000 * 60 * 60)) % 24
-    );
+    /* ==================================================
+       MUSIC BUTTON
+    ================================================== */
 
-    const minutes = Math.floor(
-        (difference / (1000 * 60)) % 60
-    );
+    if (musicButton) {
 
-    const seconds = Math.floor(
-        (difference / 1000) % 60
-    );
+        musicButton.addEventListener(
+            "click",
+            function () {
 
 
-    document.getElementById("days").textContent =
-        String(days).padStart(2, "0");
-
-    document.getElementById("hours").textContent =
-        String(hours).padStart(2, "0");
-
-    document.getElementById("minutes").textContent =
-        String(minutes).padStart(2, "0");
-
-    document.getElementById("seconds").textContent =
-        String(seconds).padStart(2, "0");
-
-}
+                if (!backgroundMusic) {
+                    return;
+                }
 
 
-updateCountdown();
-
-setInterval(updateCountdown, 1000);
+                if (backgroundMusic.paused) {
 
 
-/* ========================================= */
-/* RSVP */
-/* ========================================= */
+                    backgroundMusic
+                        .play()
+                        .then(function () {
 
-const rsvpForm = document.getElementById("rsvpForm");
+                            musicButton.classList.add(
+                                "playing"
+                            );
 
-const minusGuest = document.getElementById("minusGuest");
-const plusGuest = document.getElementById("plusGuest");
-const guestCountElement = document.getElementById("guestCount");
+                            musicIcon.textContent = "♫";
 
-let guestCount = 1;
+                        })
+                        .catch(function (error) {
+
+                            console.log(error);
+
+                        });
 
 
-/* ========================================= */
-/* PLUS GUEST */
-/* ========================================= */
+                } else {
 
-plusGuest.addEventListener("click", () => {
 
-    if (guestCount < 20) {
+                    backgroundMusic.pause();
 
-        guestCount++;
+                    musicButton.classList.remove(
+                        "playing"
+                    );
 
-        guestCountElement.textContent = guestCount;
+                    musicIcon.textContent = "♪";
+
+                }
+
+            }
+        );
 
     }
 
-});
 
 
-/* ========================================= */
-/* MINUS GUEST */
-/* ========================================= */
+    /* ==================================================
+       SCROLL REVEAL
+    ================================================== */
 
-minusGuest.addEventListener("click", () => {
-
-    if (guestCount > 1) {
-
-        guestCount--;
-
-        guestCountElement.textContent = guestCount;
-
-    }
-
-});
+    const revealElements =
+        document.querySelectorAll(".reveal");
 
 
-/* ========================================= */
-/* ATTENDANCE */
-/* ========================================= */
-
-const attendanceInputs = document.querySelectorAll(
-    'input[name="attendance"]'
-);
+    const revealObserver =
+        new IntersectionObserver(
+            function (entries) {
 
 
-attendanceInputs.forEach((input) => {
-
-    input.addEventListener("change", () => {
-
-        if (input.value === "Tidak Hadir" && input.checked) {
-
-            guestCount = 0;
-
-            guestCountElement.textContent = "0";
-
-            minusGuest.disabled = true;
-            plusGuest.disabled = true;
-
-        }
+                entries.forEach(function (entry) {
 
 
-        if (input.value === "Hadir" && input.checked) {
+                    if (entry.isIntersecting) {
 
-            guestCount = 1;
 
-            guestCountElement.textContent = "1";
+                        entry.target.classList.add(
+                            "active"
+                        );
 
-            minusGuest.disabled = false;
-            plusGuest.disabled = false;
 
-        }
+                        /*
+                         * Setelah muncul,
+                         * observer tidak perlu
+                         * mengawasi lagi.
+                         */
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach(function (element) {
+
+        revealObserver.observe(element);
 
     });
 
-});
 
 
-/* ========================================= */
-/* RSVP SUBMIT */
-/* ========================================= */
+    /* ==================================================
+       GALLERY ANIMATION
+    ================================================== */
 
-rsvpForm.addEventListener("submit", (event) => {
-
-    event.preventDefault();
-
-
-    const guestName =
-        document.getElementById("guestName").value.trim();
-
-    const attendance =
-        document.querySelector(
-            'input[name="attendance"]:checked'
-        ).value;
-
-    const message =
-        document.getElementById("message").value.trim();
+    const galleryItems =
+        document.querySelectorAll(
+            ".gallery-item"
+        );
 
 
-    const rsvpData = {
-
-        nama: guestName,
-
-        kehadiran: attendance,
-
-        jumlahOrang: guestCount,
-
-        pesan: message
-
-    };
+    const galleryObserver =
+        new IntersectionObserver(
+            function (entries) {
 
 
-    console.log("RSVP DELIA:", rsvpData);
+                entries.forEach(function (entry) {
 
 
-    alert(
-        "Terima kasih, " +
-        guestName +
-        "! Konfirmasi Anda sudah diterima."
+                    if (entry.isIntersecting) {
+
+
+                        const item =
+                            entry.target;
+
+
+                        /*
+                         * Tambahkan active
+                         * dengan sedikit delay
+                         * berdasarkan posisi.
+                         */
+
+                        const index =
+                            Array.from(
+                                galleryItems
+                            ).indexOf(item);
+
+
+                        setTimeout(
+                            function () {
+
+                                item.classList.add(
+                                    "active"
+                                );
+
+                            },
+                            index * 120
+                        );
+
+
+                        galleryObserver.unobserve(
+                            item
+                        );
+
+                    }
+
+                });
+
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+    galleryItems.forEach(function (item) {
+
+        galleryObserver.observe(item);
+
+    });
+
+
+
+    /* ==================================================
+       COUNTDOWN
+    ================================================== */
+
+    const targetDate =
+        new Date(
+            "2026-09-26T10:00:00+08:00"
+        ).getTime();
+
+
+    function updateCountdown() {
+
+
+        const now =
+            new Date().getTime();
+
+
+        const distance =
+            targetDate - now;
+
+
+        const days =
+            document.getElementById("days");
+
+        const hours =
+            document.getElementById("hours");
+
+        const minutes =
+            document.getElementById("minutes");
+
+        const seconds =
+            document.getElementById("seconds");
+
+
+        if (distance <= 0) {
+
+
+            days.textContent = "00";
+
+            hours.textContent = "00";
+
+            minutes.textContent = "00";
+
+            seconds.textContent = "00";
+
+            return;
+
+        }
+
+
+        const dayValue =
+            Math.floor(
+                distance /
+                (1000 * 60 * 60 * 24)
+            );
+
+
+        const hourValue =
+            Math.floor(
+                (distance %
+                    (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60)
+            );
+
+
+        const minuteValue =
+            Math.floor(
+                (distance %
+                    (1000 * 60 * 60)) /
+                (1000 * 60)
+            );
+
+
+        const secondValue =
+            Math.floor(
+                (distance %
+                    (1000 * 60)) /
+                1000
+            );
+
+
+        days.textContent =
+            String(dayValue).padStart(2, "0");
+
+
+        hours.textContent =
+            String(hourValue).padStart(2, "0");
+
+
+        minutes.textContent =
+            String(minuteValue).padStart(2, "0");
+
+
+        seconds.textContent =
+            String(secondValue).padStart(2, "0");
+
+    }
+
+
+    updateCountdown();
+
+
+    setInterval(
+        updateCountdown,
+        1000
     );
 
 
-    rsvpForm.reset();
+
+    /* ==================================================
+       RSVP
+    ================================================== */
+
+    const rsvpForm =
+        document.getElementById("rsvpForm");
 
 
-    guestCount = 1;
+    const guestCount =
+        document.getElementById("guestCount");
 
-    guestCountElement.textContent = "1";
 
-    minusGuest.disabled = false;
-    plusGuest.disabled = false;
+    const minusGuest =
+        document.getElementById("minusGuest");
+
+
+    const plusGuest =
+        document.getElementById("plusGuest");
+
+
+    const guestCountGroup =
+        document.getElementById(
+            "guestCountGroup"
+        );
+
+
+    const rsvpSuccess =
+        document.getElementById(
+            "rsvpSuccess"
+        );
+
+
+    let numberOfGuests = 1;
+
+
+
+    /* ==================================================
+       PLUS GUEST
+    ================================================== */
+
+    if (plusGuest) {
+
+        plusGuest.addEventListener(
+            "click",
+            function () {
+
+
+                if (numberOfGuests < 20) {
+
+                    numberOfGuests++;
+
+                    guestCount.textContent =
+                        numberOfGuests;
+
+                }
+
+            }
+        );
+
+    }
+
+
+
+    /* ==================================================
+       MINUS GUEST
+    ================================================== */
+
+    if (minusGuest) {
+
+        minusGuest.addEventListener(
+            "click",
+            function () {
+
+
+                if (numberOfGuests > 1) {
+
+                    numberOfGuests--;
+
+                    guestCount.textContent =
+                        numberOfGuests;
+
+                }
+
+            }
+        );
+
+    }
+
+
+
+    /* ==================================================
+       ATTENDANCE
+    ================================================== */
+
+    const attendanceInputs =
+        document.querySelectorAll(
+            'input[name="attendance"]'
+        );
+
+
+    attendanceInputs.forEach(
+        function (input) {
+
+
+            input.addEventListener(
+                "change",
+                function () {
+
+
+                    if (
+                        this.value ===
+                        "Tidak Hadir"
+                    ) {
+
+
+                        numberOfGuests = 0;
+
+                        guestCount.textContent =
+                            "0";
+
+
+                        guestCountGroup.style.opacity =
+                            "0.45";
+
+
+                        guestCountGroup.style.pointerEvents =
+                            "none";
+
+
+                    } else {
+
+
+                        numberOfGuests = 1;
+
+                        guestCount.textContent =
+                            "1";
+
+
+                        guestCountGroup.style.opacity =
+                            "1";
+
+
+                        guestCountGroup.style.pointerEvents =
+                            "auto";
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* ==================================================
+       RSVP SUBMIT
+    ================================================== */
+
+    if (rsvpForm) {
+
+        rsvpForm.addEventListener(
+            "submit",
+            function (event) {
+
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById(
+                        "guestName"
+                    ).value.trim();
+
+
+                const attendance =
+                    document.querySelector(
+                        'input[name="attendance"]:checked'
+                    );
+
+
+                const message =
+                    document.getElementById(
+                        "message"
+                    ).value.trim();
+
+
+                if (!attendance) {
+
+                    alert(
+                        "Mohon pilih konfirmasi kehadiran."
+                    );
+
+                    return;
+
+                }
+
+
+                /*
+                 * Data untuk sementara
+                 * ditampilkan di console.
+                 *
+                 * Nanti bisa kita sambungkan
+                 * ke Google Sheets.
+                 */
+
+                const rsvpData = {
+
+                    nama: name,
+
+                    kehadiran:
+                        attendance.value,
+
+                    jumlah:
+                        numberOfGuests,
+
+                    pesan:
+                        message,
+
+                    waktu:
+                        new Date().toLocaleString(
+                            "id-ID"
+                        )
+
+                };
+
+
+                console.log(
+                    "DATA RSVP:",
+                    rsvpData
+                );
+
+
+                /*
+                 * Sembunyikan form
+                 */
+
+                rsvpForm.classList.add(
+                    "hidden"
+                );
+
+
+                /*
+                 * Tampilkan success
+                 */
+
+                rsvpSuccess.classList.remove(
+                    "hidden"
+                );
+
+
+                /*
+                 * Scroll sedikit ke success
+                 */
+
+                setTimeout(
+                    function () {
+
+                        rsvpSuccess.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center"
+                        });
+
+                    },
+                    200
+                );
+
+            }
+        );
+
+    }
+
 
 });
