@@ -1,24 +1,118 @@
 /* ==================================================
+   PERSONAL GUEST NAME
+================================================== */
+
+const guestInvitationName =
+    document.getElementById(
+        "guestInvitationName"
+    );
+
+const guestNameInput =
+    document.getElementById(
+        "guestName"
+    );
+
+
+
+/*
+    Membaca nama dari URL.
+
+    Contoh:
+
+    ?to=Joshua%20Alexander
+
+    akan menjadi:
+
+    Joshua Alexander
+*/
+
+const urlParams =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const guestName =
+    urlParams.get("to");
+
+
+
+/* ==================================================
+   TAMPILKAN NAMA PERSONAL
+================================================== */
+
+if (
+    guestName &&
+    guestName.trim() !== ""
+) {
+
+    const decodedGuestName =
+        guestName.trim();
+
+
+    guestInvitationName.textContent =
+        decodedGuestName;
+
+
+    guestInvitationName.classList.remove(
+        "hidden"
+    );
+
+
+    /*
+        Nama yang sama otomatis dimasukkan
+        ke kolom RSVP.
+    */
+
+    if (guestNameInput) {
+
+        guestNameInput.value =
+            decodedGuestName;
+
+    }
+
+}
+
+
+
+/* ==================================================
    OPENING INVITATION
 ================================================== */
 
 const openingScreen =
-    document.getElementById("openingScreen");
+    document.getElementById(
+        "openingScreen"
+    );
+
 
 const openInvitation =
-    document.getElementById("openInvitation");
+    document.getElementById(
+        "openInvitation"
+    );
+
 
 const invitation =
-    document.getElementById("invitation");
+    document.getElementById(
+        "invitation"
+    );
+
 
 const backgroundMusic =
-    document.getElementById("backgroundMusic");
+    document.getElementById(
+        "backgroundMusic"
+    );
+
 
 const musicButton =
-    document.getElementById("musicButton");
+    document.getElementById(
+        "musicButton"
+    );
+
 
 const musicIcon =
-    document.getElementById("musicIcon");
+    document.getElementById(
+        "musicIcon"
+    );
 
 
 
@@ -26,40 +120,58 @@ const musicIcon =
    OPEN INVITATION + MUSIC
 ================================================== */
 
-openInvitation.addEventListener("click", async () => {
+openInvitation.addEventListener(
+    "click",
+    async () => {
 
-    openingScreen.style.opacity = "0";
-
-    openingScreen.style.visibility = "hidden";
-
-
-    invitation.classList.remove("hidden");
+        openingScreen.style.opacity =
+            "0";
 
 
-    window.scrollTo({
-        top: 0,
-        behavior: "instant"
-    });
+        openingScreen.style.visibility =
+            "hidden";
 
 
-    try {
-
-        await backgroundMusic.play();
-
-        musicIcon.textContent = "♫";
-
-        musicButton.classList.add("playing");
-
-    } catch (error) {
-
-        console.log(
-            "Musik belum dapat diputar otomatis:",
-            error
+        invitation.classList.remove(
+            "hidden"
         );
 
-    }
 
-});
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "instant"
+
+        });
+
+
+
+        try {
+
+            await backgroundMusic.play();
+
+
+            musicIcon.textContent =
+                "♫";
+
+
+            musicButton.classList.add(
+                "playing"
+            );
+
+
+        } catch (error) {
+
+            console.log(
+                "Musik belum dapat diputar otomatis:",
+                error
+            );
+
+        }
+
+    }
+);
 
 
 
@@ -71,15 +183,23 @@ musicButton.addEventListener(
     "click",
     async () => {
 
-        if (backgroundMusic.paused) {
+        if (
+            backgroundMusic.paused
+        ) {
 
             try {
 
                 await backgroundMusic.play();
 
-                musicIcon.textContent = "♫";
 
-                musicButton.classList.add("playing");
+                musicIcon.textContent =
+                    "♫";
+
+
+                musicButton.classList.add(
+                    "playing"
+                );
+
 
             } catch (error) {
 
@@ -91,9 +211,14 @@ musicButton.addEventListener(
 
             backgroundMusic.pause();
 
-            musicIcon.textContent = "🔇";
 
-            musicButton.classList.remove("playing");
+            musicIcon.textContent =
+                "🔇";
+
+
+            musicButton.classList.remove(
+                "playing"
+            );
 
         }
 
@@ -107,7 +232,9 @@ musicButton.addEventListener(
 ================================================== */
 
 const revealElements =
-    document.querySelectorAll(".reveal");
+    document.querySelectorAll(
+        ".reveal"
+    );
 
 
 const revealObserver =
@@ -115,17 +242,21 @@ const revealObserver =
 
         (entries) => {
 
-            entries.forEach((entry) => {
+            entries.forEach(
+                (entry) => {
 
-                if (entry.isIntersecting) {
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-                    entry.target.classList.add(
-                        "active"
-                    );
+                        entry.target.classList.add(
+                            "active"
+                        );
+
+                    }
 
                 }
-
-            });
+            );
 
         },
 
@@ -136,11 +267,15 @@ const revealObserver =
     );
 
 
-revealElements.forEach((element) => {
+revealElements.forEach(
+    (element) => {
 
-    revealObserver.observe(element);
+        revealObserver.observe(
+            element
+        );
 
-});
+    }
+);
 
 
 
@@ -149,7 +284,9 @@ revealElements.forEach((element) => {
 ================================================== */
 
 const galleryItems =
-    document.querySelectorAll(".gallery-item");
+    document.querySelectorAll(
+        ".gallery-item"
+    );
 
 
 const galleryObserver =
@@ -157,32 +294,41 @@ const galleryObserver =
 
         (entries) => {
 
-            entries.forEach((entry) => {
+            entries.forEach(
+                (entry) => {
 
-                if (entry.isIntersecting) {
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-                    const index =
-                        [
-                            ...galleryItems
-                        ].indexOf(entry.target);
+                        const index =
+                            [
+                                ...galleryItems
+                            ].indexOf(
+                                entry.target
+                            );
 
 
-                    setTimeout(() => {
+                        setTimeout(
+                            () => {
 
-                        entry.target.classList.add(
-                            "active"
+                                entry.target.classList.add(
+                                    "active"
+                                );
+
+                            },
+                            index * 120
                         );
 
-                    }, index * 120);
 
+                        galleryObserver.unobserve(
+                            entry.target
+                        );
 
-                    galleryObserver.unobserve(
-                        entry.target
-                    );
+                    }
 
                 }
-
-            });
+            );
 
         },
 
@@ -193,11 +339,15 @@ const galleryObserver =
     );
 
 
-galleryItems.forEach((item) => {
+galleryItems.forEach(
+    (item) => {
 
-    galleryObserver.observe(item);
+        galleryObserver.observe(
+            item
+        );
 
-});
+    }
+);
 
 
 
@@ -211,6 +361,7 @@ const eventDate =
     ).getTime();
 
 
+
 function updateCountdown() {
 
     const now =
@@ -221,29 +372,51 @@ function updateCountdown() {
         eventDate - now;
 
 
+
     const daysElement =
-        document.getElementById("days");
+        document.getElementById(
+            "days"
+        );
+
 
     const hoursElement =
-        document.getElementById("hours");
+        document.getElementById(
+            "hours"
+        );
+
 
     const minutesElement =
-        document.getElementById("minutes");
+        document.getElementById(
+            "minutes"
+        );
+
 
     const secondsElement =
-        document.getElementById("seconds");
+        document.getElementById(
+            "seconds"
+        );
 
 
 
-    if (distance <= 0) {
+    if (
+        distance <= 0
+    ) {
 
-        daysElement.textContent = "00";
+        daysElement.textContent =
+            "00";
 
-        hoursElement.textContent = "00";
 
-        minutesElement.textContent = "00";
+        hoursElement.textContent =
+            "00";
 
-        secondsElement.textContent = "00";
+
+        minutesElement.textContent =
+            "00";
+
+
+        secondsElement.textContent =
+            "00";
+
 
         return;
 
@@ -260,45 +433,64 @@ function updateCountdown() {
 
     const hours =
         Math.floor(
-            (distance %
-                (1000 * 60 * 60 * 24)) /
+            (
+                distance %
+                (1000 * 60 * 60 * 24)
+            ) /
             (1000 * 60 * 60)
         );
 
 
     const minutes =
         Math.floor(
-            (distance %
-                (1000 * 60 * 60)) /
+            (
+                distance %
+                (1000 * 60 * 60)
+            ) /
             (1000 * 60)
         );
 
 
     const seconds =
         Math.floor(
-            (distance %
-                (1000 * 60)) /
+            (
+                distance %
+                (1000 * 60)
+            ) /
             1000
         );
 
 
 
     daysElement.textContent =
-        String(days).padStart(2, "0");
+        String(days).padStart(
+            2,
+            "0"
+        );
 
 
     hoursElement.textContent =
-        String(hours).padStart(2, "0");
+        String(hours).padStart(
+            2,
+            "0"
+        );
 
 
     minutesElement.textContent =
-        String(minutes).padStart(2, "0");
+        String(minutes).padStart(
+            2,
+            "0"
+        );
 
 
     secondsElement.textContent =
-        String(seconds).padStart(2, "0");
+        String(seconds).padStart(
+            2,
+            "0"
+        );
 
 }
+
 
 
 updateCountdown();
@@ -316,16 +508,27 @@ setInterval(
 ================================================== */
 
 const minusGuest =
-    document.getElementById("minusGuest");
+    document.getElementById(
+        "minusGuest"
+    );
+
 
 const plusGuest =
-    document.getElementById("plusGuest");
+    document.getElementById(
+        "plusGuest"
+    );
+
 
 const guestCount =
-    document.getElementById("guestCount");
+    document.getElementById(
+        "guestCount"
+    );
+
 
 const guestCountGroup =
-    document.getElementById("guestCountGroup");
+    document.getElementById(
+        "guestCountGroup"
+    );
 
 
 let count = 1;
@@ -336,7 +539,9 @@ minusGuest.addEventListener(
     "click",
     () => {
 
-        if (count > 1) {
+        if (
+            count > 1
+        ) {
 
             count--;
 
@@ -354,7 +559,9 @@ plusGuest.addEventListener(
     "click",
     () => {
 
-        if (count < 20) {
+        if (
+            count < 20
+        ) {
 
             count++;
 
@@ -378,68 +585,73 @@ const attendanceInputs =
     );
 
 
-attendanceInputs.forEach((input) => {
+attendanceInputs.forEach(
+    (input) => {
 
-    input.addEventListener(
-        "change",
-        () => {
-
-            if (
-                input.value ===
-                    "Tidak Hadir" &&
-                input.checked
-            ) {
-
-                count = 0;
-
-                guestCount.textContent =
-                    "0";
+        input.addEventListener(
+            "change",
+            () => {
 
 
-                guestCountGroup.style.opacity =
-                    "0.5";
+                if (
+                    input.value ===
+                        "Tidak Hadir" &&
+                    input.checked
+                ) {
+
+                    count = 0;
 
 
-                minusGuest.disabled =
-                    true;
+                    guestCount.textContent =
+                        "0";
 
 
-                plusGuest.disabled =
-                    true;
+                    guestCountGroup.style.opacity =
+                        "0.5";
+
+
+                    minusGuest.disabled =
+                        true;
+
+
+                    plusGuest.disabled =
+                        true;
+
+                }
+
+
+
+                if (
+                    input.value ===
+                        "Hadir" &&
+                    input.checked
+                ) {
+
+                    count = 1;
+
+
+                    guestCount.textContent =
+                        "1";
+
+
+                    guestCountGroup.style.opacity =
+                        "1";
+
+
+                    minusGuest.disabled =
+                        false;
+
+
+                    plusGuest.disabled =
+                        false;
+
+                }
 
             }
+        );
 
-
-
-            if (
-                input.value ===
-                    "Hadir" &&
-                input.checked
-            ) {
-
-                count = 1;
-
-                guestCount.textContent =
-                    "1";
-
-
-                guestCountGroup.style.opacity =
-                    "1";
-
-
-                minusGuest.disabled =
-                    false;
-
-
-                plusGuest.disabled =
-                    false;
-
-            }
-
-        }
-    );
-
-});
+    }
+);
 
 
 
@@ -448,10 +660,15 @@ attendanceInputs.forEach((input) => {
 ================================================== */
 
 const rsvpForm =
-    document.getElementById("rsvpForm");
+    document.getElementById(
+        "rsvpForm"
+    );
+
 
 const rsvpSuccess =
-    document.getElementById("rsvpSuccess");
+    document.getElementById(
+        "rsvpSuccess"
+    );
 
 
 
@@ -463,7 +680,7 @@ rsvpForm.addEventListener(
 
 
 
-        const guestName =
+        const currentGuestName =
             document.getElementById(
                 "guestName"
             ).value;
@@ -484,13 +701,17 @@ rsvpForm.addEventListener(
 
         console.log({
 
-            name: guestName,
+            name:
+                currentGuestName,
 
-            attendance: attendance,
+            attendance:
+                attendance,
 
-            guestCount: count,
+            guestCount:
+                count,
 
-            message: message
+            message:
+                message
 
         });
 
