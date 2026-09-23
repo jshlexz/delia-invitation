@@ -328,13 +328,8 @@ a {
    BIG CROSS
 ================================================== */
 
-/*
-   SALIB DIBUAT BESAR
-   sekitar 2x ukuran sebelumnya
-*/
-
 .big-cross {
-    margin: 25px auto 30px;
+    margin: 0 auto 25px;
 
     text-align: center;
 }
@@ -687,24 +682,11 @@ blockquote {
 }
 
 
-.gallery-intro {
-    max-width: 600px;
-
-    margin: 25px auto 50px;
-
-    color: var(--brown-light);
-
-    font-size: 0.85rem;
-
-    text-align: center;
-}
-
-
 .gallery {
     width: 100%;
     max-width: 650px;
 
-    margin: auto;
+    margin: 50px auto 0;
 
     display: flex;
     flex-direction: column;
