@@ -1648,3 +1648,96 @@ footer span {
     }
 
 }
+/* ==================================================
+   PERSONAL GUEST INVITATION
+================================================== */
+
+body.locked {
+    overflow: hidden;
+}
+
+.guest-greeting {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 16px;
+
+    text-align: center;
+
+    animation: guestGreetingAppear 1s ease both;
+}
+
+.guest-greeting.hidden {
+    display: none !important;
+}
+
+.guest-greeting span {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: var(--brown-light);
+
+    font-size: 0.58rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.25em;
+}
+
+.guest-greeting strong {
+    display: block;
+
+    max-width: 90vw;
+
+    color: var(--pink-dark);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(1.7rem, 7vw, 2.5rem);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    overflow-wrap: anywhere;
+}
+
+@keyframes guestGreetingAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==================================================
+   RSVP RESULT
+================================================== */
+
+#rsvpResult {
+    white-space: pre-line;
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media (max-width: 400px) {
+
+    .guest-greeting strong {
+        font-size: 1.65rem;
+    }
+
+}
