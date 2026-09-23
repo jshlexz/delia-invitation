@@ -41,11 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
             function () {
 
 
-                /*
-                 * Musik mulai setelah user
-                 * melakukan klik.
-                 */
-
                 if (backgroundMusic) {
 
                     backgroundMusic.volume = 0.45;
@@ -71,16 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                /*
-                 * Tampilkan invitation
-                 */
-
                 invitation.classList.remove("hidden");
 
-
-                /*
-                 * Hilangkan opening
-                 */
 
                 setTimeout(function () {
 
@@ -88,10 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }, 100);
 
-
-                /*
-                 * Scroll ke awal invitation
-                 */
 
                 setTimeout(function () {
 
@@ -191,12 +174,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         );
 
 
-                        /*
-                         * Setelah muncul,
-                         * observer tidak perlu
-                         * mengawasi lagi.
-                         */
-
                         revealObserver.unobserve(
                             entry.target
                         );
@@ -245,12 +222,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         const item =
                             entry.target;
 
-
-                        /*
-                         * Tambahkan active
-                         * dengan sedikit delay
-                         * berdasarkan posisi.
-                         */
 
                         const index =
                             Array.from(
@@ -601,14 +572,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                /*
-                 * Data untuk sementara
-                 * ditampilkan di console.
-                 *
-                 * Nanti bisa kita sambungkan
-                 * ke Google Sheets.
-                 */
-
                 const rsvpData = {
 
                     nama: name,
@@ -636,27 +599,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
-                /*
-                 * Sembunyikan form
-                 */
-
                 rsvpForm.classList.add(
                     "hidden"
                 );
 
 
-                /*
-                 * Tampilkan success
-                 */
-
                 rsvpSuccess.classList.remove(
                     "hidden"
                 );
 
-
-                /*
-                 * Scroll sedikit ke success
-                 */
 
                 setTimeout(
                     function () {
