@@ -3,15 +3,10 @@
 ================================================== */
 
 const guestInvitationName =
-    document.getElementById(
-        "guestInvitationName"
-    );
+    document.getElementById("guestInvitationName");
 
 const guestNameInput =
-    document.getElementById(
-        "guestName"
-    );
-
+    document.getElementById("guestName");
 
 
 /*
@@ -19,22 +14,18 @@ const guestNameInput =
 
     Contoh:
 
-    ?to=Joshua%20Alexander
+    https://jshlexz.github.io/delia-beach-party/?to=Willy%20Raju
 
-    akan menjadi:
+    akan dibaca menjadi:
 
-    Joshua Alexander
+    Willy Raju
 */
 
 const urlParams =
-    new URLSearchParams(
-        window.location.search
-    );
-
+    new URLSearchParams(window.location.search);
 
 const guestName =
     urlParams.get("to");
-
 
 
 /* ==================================================
@@ -50,18 +41,24 @@ if (
         guestName.trim();
 
 
-    guestInvitationName.textContent =
-        decodedGuestName;
+    /*
+        Tampilkan nama pada halaman pembuka.
+    */
 
+    if (guestInvitationName) {
 
-    guestInvitationName.classList.remove(
-        "hidden"
-    );
+        guestInvitationName.textContent =
+            decodedGuestName;
+
+        guestInvitationName.classList.remove(
+            "hidden"
+        );
+
+    }
 
 
     /*
-        Nama yang sama otomatis dimasukkan
-        ke kolom RSVP.
+        Nama otomatis masuk ke kolom RSVP.
     */
 
     if (guestNameInput) {
@@ -74,46 +71,27 @@ if (
 }
 
 
-
 /* ==================================================
    OPENING INVITATION
 ================================================== */
 
 const openingScreen =
-    document.getElementById(
-        "openingScreen"
-    );
-
+    document.getElementById("openingScreen");
 
 const openInvitation =
-    document.getElementById(
-        "openInvitation"
-    );
-
+    document.getElementById("openInvitation");
 
 const invitation =
-    document.getElementById(
-        "invitation"
-    );
-
+    document.getElementById("invitation");
 
 const backgroundMusic =
-    document.getElementById(
-        "backgroundMusic"
-    );
-
+    document.getElementById("backgroundMusic");
 
 const musicButton =
-    document.getElementById(
-        "musicButton"
-    );
-
+    document.getElementById("musicButton");
 
 const musicIcon =
-    document.getElementById(
-        "musicIcon"
-    );
-
+    document.getElementById("musicIcon");
 
 
 /* ==================================================
@@ -124,42 +102,28 @@ openInvitation.addEventListener(
     "click",
     async () => {
 
-        openingScreen.style.opacity =
-            "0";
+        openingScreen.style.opacity = "0";
 
+        openingScreen.style.visibility = "hidden";
 
-        openingScreen.style.visibility =
-            "hidden";
-
-
-        invitation.classList.remove(
-            "hidden"
-        );
+        invitation.classList.remove("hidden");
 
 
         window.scrollTo({
-
             top: 0,
-
             behavior: "instant"
-
         });
-
 
 
         try {
 
             await backgroundMusic.play();
 
-
-            musicIcon.textContent =
-                "♫";
-
+            musicIcon.textContent = "♫";
 
             musicButton.classList.add(
                 "playing"
             );
-
 
         } catch (error) {
 
@@ -174,7 +138,6 @@ openInvitation.addEventListener(
 );
 
 
-
 /* ==================================================
    MUSIC BUTTON
 ================================================== */
@@ -183,23 +146,17 @@ musicButton.addEventListener(
     "click",
     async () => {
 
-        if (
-            backgroundMusic.paused
-        ) {
+        if (backgroundMusic.paused) {
 
             try {
 
                 await backgroundMusic.play();
 
-
-                musicIcon.textContent =
-                    "♫";
-
+                musicIcon.textContent = "♫";
 
                 musicButton.classList.add(
                     "playing"
                 );
-
 
             } catch (error) {
 
@@ -211,10 +168,7 @@ musicButton.addEventListener(
 
             backgroundMusic.pause();
 
-
-            musicIcon.textContent =
-                "🔇";
-
+            musicIcon.textContent = "🔇";
 
             musicButton.classList.remove(
                 "playing"
@@ -226,15 +180,12 @@ musicButton.addEventListener(
 );
 
 
-
 /* ==================================================
    SCROLL REVEAL
 ================================================== */
 
 const revealElements =
-    document.querySelectorAll(
-        ".reveal"
-    );
+    document.querySelectorAll(".reveal");
 
 
 const revealObserver =
@@ -270,13 +221,10 @@ const revealObserver =
 revealElements.forEach(
     (element) => {
 
-        revealObserver.observe(
-            element
-        );
+        revealObserver.observe(element);
 
     }
 );
-
 
 
 /* ==================================================
@@ -284,9 +232,7 @@ revealElements.forEach(
 ================================================== */
 
 const galleryItems =
-    document.querySelectorAll(
-        ".gallery-item"
-    );
+    document.querySelectorAll(".gallery-item");
 
 
 const galleryObserver =
@@ -342,13 +288,10 @@ const galleryObserver =
 galleryItems.forEach(
     (item) => {
 
-        galleryObserver.observe(
-            item
-        );
+        galleryObserver.observe(item);
 
     }
 );
-
 
 
 /* ==================================================
@@ -361,67 +304,41 @@ const eventDate =
     ).getTime();
 
 
-
 function updateCountdown() {
 
     const now =
         new Date().getTime();
 
-
     const distance =
         eventDate - now;
 
 
-
     const daysElement =
-        document.getElementById(
-            "days"
-        );
-
+        document.getElementById("days");
 
     const hoursElement =
-        document.getElementById(
-            "hours"
-        );
-
+        document.getElementById("hours");
 
     const minutesElement =
-        document.getElementById(
-            "minutes"
-        );
-
+        document.getElementById("minutes");
 
     const secondsElement =
-        document.getElementById(
-            "seconds"
-        );
+        document.getElementById("seconds");
 
 
+    if (distance <= 0) {
 
-    if (
-        distance <= 0
-    ) {
+        daysElement.textContent = "00";
 
-        daysElement.textContent =
-            "00";
+        hoursElement.textContent = "00";
 
+        minutesElement.textContent = "00";
 
-        hoursElement.textContent =
-            "00";
-
-
-        minutesElement.textContent =
-            "00";
-
-
-        secondsElement.textContent =
-            "00";
-
+        secondsElement.textContent = "00";
 
         return;
 
     }
-
 
 
     const days =
@@ -461,40 +378,22 @@ function updateCountdown() {
         );
 
 
-
     daysElement.textContent =
-        String(days).padStart(
-            2,
-            "0"
-        );
-
+        String(days).padStart(2, "0");
 
     hoursElement.textContent =
-        String(hours).padStart(
-            2,
-            "0"
-        );
-
+        String(hours).padStart(2, "0");
 
     minutesElement.textContent =
-        String(minutes).padStart(
-            2,
-            "0"
-        );
-
+        String(minutes).padStart(2, "0");
 
     secondsElement.textContent =
-        String(seconds).padStart(
-            2,
-            "0"
-        );
+        String(seconds).padStart(2, "0");
 
 }
 
 
-
 updateCountdown();
-
 
 setInterval(
     updateCountdown,
@@ -502,46 +401,31 @@ setInterval(
 );
 
 
-
 /* ==================================================
    RSVP GUEST COUNTER
 ================================================== */
 
 const minusGuest =
-    document.getElementById(
-        "minusGuest"
-    );
-
+    document.getElementById("minusGuest");
 
 const plusGuest =
-    document.getElementById(
-        "plusGuest"
-    );
-
+    document.getElementById("plusGuest");
 
 const guestCount =
-    document.getElementById(
-        "guestCount"
-    );
-
+    document.getElementById("guestCount");
 
 const guestCountGroup =
-    document.getElementById(
-        "guestCountGroup"
-    );
+    document.getElementById("guestCountGroup");
 
 
 let count = 1;
-
 
 
 minusGuest.addEventListener(
     "click",
     () => {
 
-        if (
-            count > 1
-        ) {
+        if (count > 1) {
 
             count--;
 
@@ -554,14 +438,11 @@ minusGuest.addEventListener(
 );
 
 
-
 plusGuest.addEventListener(
     "click",
     () => {
 
-        if (
-            count < 20
-        ) {
+        if (count < 20) {
 
             count++;
 
@@ -572,7 +453,6 @@ plusGuest.addEventListener(
 
     }
 );
-
 
 
 /* ==================================================
@@ -592,27 +472,22 @@ attendanceInputs.forEach(
             "change",
             () => {
 
-
                 if (
                     input.value ===
-                        "Tidak Hadir" &&
+                    "Tidak Hadir" &&
                     input.checked
                 ) {
 
                     count = 0;
 
-
                     guestCount.textContent =
                         "0";
-
 
                     guestCountGroup.style.opacity =
                         "0.5";
 
-
                     minusGuest.disabled =
                         true;
-
 
                     plusGuest.disabled =
                         true;
@@ -620,27 +495,22 @@ attendanceInputs.forEach(
                 }
 
 
-
                 if (
                     input.value ===
-                        "Hadir" &&
+                    "Hadir" &&
                     input.checked
                 ) {
 
                     count = 1;
 
-
                     guestCount.textContent =
                         "1";
-
 
                     guestCountGroup.style.opacity =
                         "1";
 
-
                     minusGuest.disabled =
                         false;
-
 
                     plusGuest.disabled =
                         false;
@@ -654,22 +524,15 @@ attendanceInputs.forEach(
 );
 
 
-
 /* ==================================================
    RSVP FORM
 ================================================== */
 
 const rsvpForm =
-    document.getElementById(
-        "rsvpForm"
-    );
-
+    document.getElementById("rsvpForm");
 
 const rsvpSuccess =
-    document.getElementById(
-        "rsvpSuccess"
-    );
-
+    document.getElementById("rsvpSuccess");
 
 
 rsvpForm.addEventListener(
@@ -677,7 +540,6 @@ rsvpForm.addEventListener(
     (event) => {
 
         event.preventDefault();
-
 
 
         const currentGuestName =
@@ -698,7 +560,6 @@ rsvpForm.addEventListener(
             ).value;
 
 
-
         console.log({
 
             name:
@@ -714,7 +575,6 @@ rsvpForm.addEventListener(
                 message
 
         });
-
 
 
         rsvpForm.classList.add(
