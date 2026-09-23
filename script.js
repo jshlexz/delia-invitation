@@ -1,60 +1,4 @@
 /* ==================================================
-   DELIA'S BEACH PARTY
-   MAIN JAVASCRIPT
-================================================== */
-
-
-/* ==================================================
-   PERSONAL GUEST NAME
-================================================== */
-
-const guestInvitationName =
-    document.getElementById("guestInvitationName");
-
-const guestNameInput =
-    document.getElementById("guestName");
-
-const urlParams =
-    new URLSearchParams(window.location.search);
-
-const guestName =
-    urlParams.get("to");
-
-
-/* ==================================================
-   TAMPILKAN NAMA PERSONAL
-================================================== */
-
-if (
-    guestName &&
-    guestName.trim() !== ""
-) {
-
-    const decodedGuestName =
-        guestName.trim();
-
-    if (guestInvitationName) {
-
-        guestInvitationName.textContent =
-            decodedGuestName;
-
-        guestInvitationName.classList.remove(
-            "hidden"
-        );
-
-    }
-
-    if (guestNameInput) {
-
-        guestNameInput.value =
-            decodedGuestName;
-
-    }
-
-}
-
-
-/* ==================================================
    OPENING INVITATION
 ================================================== */
 
@@ -77,124 +21,85 @@ const musicIcon =
     document.getElementById("musicIcon");
 
 
+
 /* ==================================================
-   OPEN INVITATION
+   OPEN INVITATION + MUSIC
 ================================================== */
 
-if (
-    openInvitation &&
-    openingScreen &&
-    invitation
-) {
+openInvitation.addEventListener("click", async () => {
 
-    openInvitation.addEventListener(
-        "click",
-        async () => {
+    openingScreen.style.opacity = "0";
 
-            openingScreen.style.opacity = "0";
-            openingScreen.style.visibility = "hidden";
-
-            invitation.classList.remove("hidden");
-
-            window.scrollTo({
-                top: 0,
-                behavior: "instant"
-            });
+    openingScreen.style.visibility = "hidden";
 
 
-            /* ==============================
-               PLAY MUSIC
-            ============================== */
+    invitation.classList.remove("hidden");
 
-            if (backgroundMusic) {
 
-                try {
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
 
-                    await backgroundMusic.play();
 
-                    if (musicIcon) {
-                        musicIcon.textContent = "♫";
-                    }
+    try {
 
-                    if (musicButton) {
-                        musicButton.classList.add(
-                            "playing"
-                        );
-                    }
+        await backgroundMusic.play();
 
-                } catch (error) {
+        musicIcon.textContent = "♫";
 
-                    console.log(
-                        "Musik belum dapat diputar otomatis:",
-                        error
-                    );
+        musicButton.classList.add("playing");
 
-                }
+    } catch (error) {
 
-            }
+        console.log(
+            "Musik belum dapat diputar otomatis:",
+            error
+        );
 
-        }
-    );
+    }
 
-}
+});
+
 
 
 /* ==================================================
    MUSIC BUTTON
 ================================================== */
 
-if (
-    musicButton &&
-    backgroundMusic
-) {
+musicButton.addEventListener(
+    "click",
+    async () => {
 
-    musicButton.addEventListener(
-        "click",
-        async () => {
+        if (backgroundMusic.paused) {
 
-            if (
-                backgroundMusic.paused
-            ) {
+            try {
 
-                try {
+                await backgroundMusic.play();
 
-                    await backgroundMusic.play();
+                musicIcon.textContent = "♫";
 
-                    if (musicIcon) {
-                        musicIcon.textContent = "♫";
-                    }
+                musicButton.classList.add("playing");
 
-                    musicButton.classList.add(
-                        "playing"
-                    );
+            } catch (error) {
 
-                } catch (error) {
-
-                    console.log(
-                        "Musik gagal diputar:",
-                        error
-                    );
-
-                }
-
-            } else {
-
-                backgroundMusic.pause();
-
-                if (musicIcon) {
-                    musicIcon.textContent = "🔇";
-                }
-
-                musicButton.classList.remove(
-                    "playing"
-                );
+                console.log(error);
 
             }
 
-        }
-    );
+        } else {
 
-}
+            backgroundMusic.pause();
+
+            musicIcon.textContent = "🔇";
+
+            musicButton.classList.remove("playing");
+
+        }
+
+    }
+);
+
 
 
 /* ==================================================
@@ -205,54 +110,38 @@ const revealElements =
     document.querySelectorAll(".reveal");
 
 
-if (
-    revealElements.length > 0 &&
-    "IntersectionObserver" in window
-) {
+const revealObserver =
+    new IntersectionObserver(
 
-    const revealObserver =
-        new IntersectionObserver(
+        (entries) => {
 
-            (entries) => {
+            entries.forEach((entry) => {
 
-                entries.forEach(
-                    (entry) => {
+                if (entry.isIntersecting) {
 
-                        if (
-                            entry.isIntersecting
-                        ) {
+                    entry.target.classList.add(
+                        "active"
+                    );
 
-                            entry.target.classList.add(
-                                "active"
-                            );
+                }
 
-                            revealObserver.unobserve(
-                                entry.target
-                            );
+            });
 
-                        }
+        },
 
-                    }
-                );
-
-            },
-
-            {
-                threshold: 0.12
-            }
-
-        );
-
-
-    revealElements.forEach(
-        (element) => {
-
-            revealObserver.observe(element);
-
+        {
+            threshold: 0.12
         }
+
     );
 
-}
+
+revealElements.forEach((element) => {
+
+    revealObserver.observe(element);
+
+});
+
 
 
 /* ==================================================
@@ -260,78 +149,56 @@ if (
 ================================================== */
 
 const galleryItems =
-    document.querySelectorAll(
-        ".gallery-item"
-    );
+    document.querySelectorAll(".gallery-item");
 
 
-if (
-    galleryItems.length > 0 &&
-    "IntersectionObserver" in window
-) {
+const galleryObserver =
+    new IntersectionObserver(
 
-    const galleryObserver =
-        new IntersectionObserver(
+        (entries) => {
 
-            (entries) => {
+            entries.forEach((entry) => {
 
-                entries.forEach(
-                    (entry) => {
+                if (entry.isIntersecting) {
 
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            const index =
-                                Array.from(
-                                    galleryItems
-                                ).indexOf(
-                                    entry.target
-                                );
+                    const index =
+                        [
+                            ...galleryItems
+                        ].indexOf(entry.target);
 
 
-                            setTimeout(
-                                () => {
+                    setTimeout(() => {
 
-                                    entry.target.classList.add(
-                                        "active"
-                                    );
+                        entry.target.classList.add(
+                            "active"
+                        );
 
-                                },
-                                Math.max(
-                                    index,
-                                    0
-                                ) * 120
-                            );
+                    }, index * 120);
 
 
-                            galleryObserver.unobserve(
-                                entry.target
-                            );
+                    galleryObserver.unobserve(
+                        entry.target
+                    );
 
-                        }
+                }
 
-                    }
-                );
+            });
 
-            },
+        },
 
-            {
-                threshold: 0.15
-            }
-
-        );
-
-
-    galleryItems.forEach(
-        (item) => {
-
-            galleryObserver.observe(item);
-
+        {
+            threshold: 0.15
         }
+
     );
 
-}
+
+galleryItems.forEach((item) => {
+
+    galleryObserver.observe(item);
+
+});
+
 
 
 /* ==================================================
@@ -344,50 +211,44 @@ const eventDate =
     ).getTime();
 
 
-const daysElement =
-    document.getElementById("days");
-
-const hoursElement =
-    document.getElementById("hours");
-
-const minutesElement =
-    document.getElementById("minutes");
-
-const secondsElement =
-    document.getElementById("seconds");
-
-
 function updateCountdown() {
 
     const now =
         new Date().getTime();
 
+
     const distance =
         eventDate - now;
 
 
-    if (
-        !daysElement ||
-        !hoursElement ||
-        !minutesElement ||
-        !secondsElement
-    ) {
+    const daysElement =
+        document.getElementById("days");
 
-        return;
+    const hoursElement =
+        document.getElementById("hours");
 
-    }
+    const minutesElement =
+        document.getElementById("minutes");
+
+    const secondsElement =
+        document.getElementById("seconds");
+
 
 
     if (distance <= 0) {
 
         daysElement.textContent = "00";
+
         hoursElement.textContent = "00";
+
         minutesElement.textContent = "00";
+
         secondsElement.textContent = "00";
 
         return;
 
     }
+
 
 
     const days =
@@ -399,42 +260,40 @@ function updateCountdown() {
 
     const hours =
         Math.floor(
-            (
-                distance %
-                (1000 * 60 * 60 * 24)
-            ) /
+            (distance %
+                (1000 * 60 * 60 * 24)) /
             (1000 * 60 * 60)
         );
 
 
     const minutes =
         Math.floor(
-            (
-                distance %
-                (1000 * 60 * 60)
-            ) /
+            (distance %
+                (1000 * 60 * 60)) /
             (1000 * 60)
         );
 
 
     const seconds =
         Math.floor(
-            (
-                distance %
-                (1000 * 60)
-            ) /
+            (distance %
+                (1000 * 60)) /
             1000
         );
+
 
 
     daysElement.textContent =
         String(days).padStart(2, "0");
 
+
     hoursElement.textContent =
         String(hours).padStart(2, "0");
 
+
     minutesElement.textContent =
         String(minutes).padStart(2, "0");
+
 
     secondsElement.textContent =
         String(seconds).padStart(2, "0");
@@ -444,10 +303,12 @@ function updateCountdown() {
 
 updateCountdown();
 
+
 setInterval(
     updateCountdown,
     1000
 );
+
 
 
 /* ==================================================
@@ -470,60 +331,41 @@ const guestCountGroup =
 let count = 1;
 
 
-/* ==================================================
-   MINUS GUEST
-================================================== */
 
-if (
-    minusGuest &&
-    guestCount
-) {
+minusGuest.addEventListener(
+    "click",
+    () => {
 
-    minusGuest.addEventListener(
-        "click",
-        () => {
+        if (count > 1) {
 
-            if (count > 1) {
+            count--;
 
-                count--;
-
-                guestCount.textContent =
-                    count;
-
-            }
+            guestCount.textContent =
+                count;
 
         }
-    );
 
-}
+    }
+);
 
 
-/* ==================================================
-   PLUS GUEST
-================================================== */
 
-if (
-    plusGuest &&
-    guestCount
-) {
+plusGuest.addEventListener(
+    "click",
+    () => {
 
-    plusGuest.addEventListener(
-        "click",
-        () => {
+        if (count < 20) {
 
-            if (count < 20) {
+            count++;
 
-                count++;
-
-                guestCount.textContent =
-                    count;
-
-            }
+            guestCount.textContent =
+                count;
 
         }
-    );
 
-}
+    }
+);
+
 
 
 /* ==================================================
@@ -536,103 +378,69 @@ const attendanceInputs =
     );
 
 
-attendanceInputs.forEach(
-    (input) => {
+attendanceInputs.forEach((input) => {
 
-        input.addEventListener(
-            "change",
-            () => {
+    input.addEventListener(
+        "change",
+        () => {
 
-                if (
-                    input.value ===
+            if (
+                input.value ===
                     "Tidak Hadir" &&
-                    input.checked
-                ) {
+                input.checked
+            ) {
 
-                    count = 0;
+                count = 0;
 
-
-                    if (guestCount) {
-
-                        guestCount.textContent =
-                            "0";
-
-                    }
+                guestCount.textContent =
+                    "0";
 
 
-                    if (guestCountGroup) {
-
-                        guestCountGroup.style.opacity =
-                            "0.5";
-
-                    }
+                guestCountGroup.style.opacity =
+                    "0.5";
 
 
-                    if (minusGuest) {
-
-                        minusGuest.disabled =
-                            true;
-
-                    }
+                minusGuest.disabled =
+                    true;
 
 
-                    if (plusGuest) {
-
-                        plusGuest.disabled =
-                            true;
-
-                    }
-
-                }
-
-
-                if (
-                    input.value ===
-                    "Hadir" &&
-                    input.checked
-                ) {
-
-                    count = 1;
-
-
-                    if (guestCount) {
-
-                        guestCount.textContent =
-                            "1";
-
-                    }
-
-
-                    if (guestCountGroup) {
-
-                        guestCountGroup.style.opacity =
-                            "1";
-
-                    }
-
-
-                    if (minusGuest) {
-
-                        minusGuest.disabled =
-                            false;
-
-                    }
-
-
-                    if (plusGuest) {
-
-                        plusGuest.disabled =
-                            false;
-
-                    }
-
-                }
+                plusGuest.disabled =
+                    true;
 
             }
-        );
 
-    }
-);
+
+
+            if (
+                input.value ===
+                    "Hadir" &&
+                input.checked
+            ) {
+
+                count = 1;
+
+                guestCount.textContent =
+                    "1";
+
+
+                guestCountGroup.style.opacity =
+                    "1";
+
+
+                minusGuest.disabled =
+                    false;
+
+
+                plusGuest.disabled =
+                    false;
+
+            }
+
+        }
+    );
+
+});
+
 
 
 /* ==================================================
@@ -646,82 +454,56 @@ const rsvpSuccess =
     document.getElementById("rsvpSuccess");
 
 
-if (rsvpForm) {
 
-    rsvpForm.addEventListener(
-        "submit",
-        (event) => {
+rsvpForm.addEventListener(
+    "submit",
+    (event) => {
 
-            event.preventDefault();
-
-
-            const currentGuestNameElement =
-                document.getElementById(
-                    "guestName"
-                );
+        event.preventDefault();
 
 
-            const messageElement =
-                document.getElementById(
-                    "message"
-                );
+
+        const guestName =
+            document.getElementById(
+                "guestName"
+            ).value;
 
 
-            const attendanceElement =
-                document.querySelector(
-                    'input[name="attendance"]:checked'
-                );
+        const attendance =
+            document.querySelector(
+                'input[name="attendance"]:checked'
+            )?.value;
 
 
-            const currentGuestName =
-                currentGuestNameElement
-                    ? currentGuestNameElement.value
-                    : "";
+        const message =
+            document.getElementById(
+                "message"
+            ).value;
 
 
-            const attendance =
-                attendanceElement
-                    ? attendanceElement.value
-                    : "";
+
+        console.log({
+
+            name: guestName,
+
+            attendance: attendance,
+
+            guestCount: count,
+
+            message: message
+
+        });
 
 
-            const message =
-                messageElement
-                    ? messageElement.value
-                    : "";
+
+        rsvpForm.classList.add(
+            "hidden"
+        );
 
 
-            console.log({
+        rsvpSuccess.classList.remove(
+            "hidden"
+        );
 
-                name:
-                    currentGuestName,
-
-                attendance:
-                    attendance,
-
-                guestCount:
-                    count,
-
-                message:
-                    message
-
-            });
-
-
-            rsvpForm.classList.add(
-                "hidden"
-            );
-
-
-            if (rsvpSuccess) {
-
-                rsvpSuccess.classList.remove(
-                    "hidden"
-                );
-
-            }
-
-        }
-    );
-
-}
+    }
+);
